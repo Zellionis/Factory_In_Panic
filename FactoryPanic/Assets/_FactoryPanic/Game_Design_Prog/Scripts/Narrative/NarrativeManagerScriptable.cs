@@ -47,6 +47,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             }
         }
 
+        public DialogueData NextLine()
+        {
+            return managerDialogueBlock[currentBlockIndex].NextLine();
+        }
+
         public DialogueData LoadBlock(int indexBlock)
         {
             managerDialogueBlock[currentBlockIndex].ResetIndex();
@@ -88,6 +93,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
          public string text;
          public float durationOfText;
          public Animator sprite;
+        public bool lastLine;
 
         }
 }

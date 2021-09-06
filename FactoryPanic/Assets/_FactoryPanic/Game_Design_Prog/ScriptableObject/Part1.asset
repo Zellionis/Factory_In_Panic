@@ -12,5 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
   m_Name: Part1
   m_EditorClassIdentifier: 
-  name: 
-  lines: []
+  lines:
+  - text: Heyooo
+    durationOfText: 4
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: How are ya?
+    durationOfText: 4
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: I'm good, thanks you!
+    durationOfText: 4
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: I'm talking alone, isn't it
+    durationOfText: 4
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: My life is so sad....
+    durationOfText: 4
+    sprite: {fileID: 0}
+    lastLine: 1

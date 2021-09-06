@@ -20,8 +20,10 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public DialogueData NextLine()
         {
-            if (currentLineIndex < lines.Count - 1) currentLineIndex++;
+            if (currentLineIndex < lines.Count - 1)currentLineIndex++;
+                
             return lines[currentLineIndex];
+
         }
 
         public void ResetIndex()

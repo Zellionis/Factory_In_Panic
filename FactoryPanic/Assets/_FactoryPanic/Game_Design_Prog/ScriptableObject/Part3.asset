@@ -12,5 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
   m_Name: Part3
   m_EditorClassIdentifier: 
-  name: 
-  lines: []
+  lines:
+  - text: zzz
+    durationOfText: 1
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: zzzzzzzzz
+    durationOfText: 2
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: ZZZZZzzzZZZZzzzzzzzzzzz
+    durationOfText: 3
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: zzzzzzzzzzzzzzzz
+    durationOfText: 2
+    sprite: {fileID: 0}
+    lastLine: 1
