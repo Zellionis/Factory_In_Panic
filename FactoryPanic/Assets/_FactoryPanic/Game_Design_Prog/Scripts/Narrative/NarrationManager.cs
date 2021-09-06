@@ -11,33 +11,39 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
     public class NarrationManager : MonoBehaviour
     {
 
-        [SerializeField] private TextMeshProUGUI Box = default;
-        [SerializeField] private NarrativeManagerScriptable ManagerBox = default;
+        [SerializeField] private TextMeshProUGUI box = default;
+        [SerializeField] private NarrativeManagerScriptable managerBox = default;
+        [SerializeField] private GameObject skipButton = default;
 
         private void Start()
         {
-            ManagerBox.ResetNumber();
-            Box.text = ManagerBox.CurrentDiscution;    
+            managerBox.ResetNumber();
+            box.text = managerBox.CurrentDiscution;    
+        }
+
+        public void Open()
+        {
+            
         }
 
         public void ShowNextText()
         {
-            Box.text = ManagerBox.NextDiscution();
+            box.text = managerBox.NextDiscution();
         }
 
         public void ShowNextPunchline()
         {
-            Box.text = ManagerBox.GetRandomPunchline;
+            box.text = managerBox.GetRandomPunchline;
         }
 
         public void ShowNextBoost()
         {
-            Box.text = ManagerBox.GetRandomBoostAnswer;
+            box.text = managerBox.GetRandomBoostAnswer;
         }
 
         public void ShowNextDoubt()
         {
-            Box.text = ManagerBox.GetRandomDoubtfullAnswer;
+            box.text = managerBox.GetRandomDoubtfullAnswer;
         }
     }
 }
