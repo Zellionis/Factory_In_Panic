@@ -18,17 +18,16 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         private void Start()
         {
             managerBox.ResetNumber();
-            box.text = managerBox.CurrentDiscution;    
+            box.text = managerBox.CurrentDiscution.text;    
         }
 
         public void Open()
         {
-            
+            skipButton.SetActive(true);
         }
 
         public void ShowNextText()
         {
-            box.text = managerBox.NextDiscution();
         }
 
         public void ShowNextPunchline()

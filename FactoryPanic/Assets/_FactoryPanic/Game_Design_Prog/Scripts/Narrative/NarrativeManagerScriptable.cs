@@ -7,21 +7,21 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Com.IsartDigital.FactoryPanic.GameDesignProg {
+namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
     [CreateAssetMenu(menuName = "FactoryPanic/NarrativeManagerScriptable")]
     public class NarrativeManagerScriptable : ScriptableObject {
-        [SerializeField] public List<DialogueData> ManagerDialogueBasic = default;
+        [SerializeField] public List<BlockOfLines> managerDialogueBlock = default;
         [SerializeField] public List<DialogueData> ManagerRemark = default;
         [SerializeField] public List<DialogueData> ManagerBoost = default;
         [SerializeField] public List<DialogueData> ManagerDoubtful = default;
-        private int index = 0;
-        private int randomIndex = 0;
-        public string CurrentDiscution
+        private int currentBlockIndex = 0;
+        private int previewsRandomIndex = 0;
+        public DialogueData CurrentDiscution
         {
             get
             {
-                return ManagerDialogueBasic[index].text;
+                return managerDialogueBlock[currentBlockIndex].CurrentLine;
             }
         }
 
@@ -39,7 +39,6 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg {
                 return GetRandomAnswer(ManagerBoost);
             }
         }
-
         public string GetRandomDoubtfullAnswer
         {
             get
@@ -48,10 +47,21 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg {
             }
         }
 
-        public string NextDiscution()
+        public DialogueData LoadBlock(int indexBlock)
         {
-            if(index < ManagerDialogueBasic.Count-1) index++;
-            return ManagerDialogueBasic[index].text;
+            managerDialogueBlock[currentBlockIndex].ResetIndex();
+            if (indexBlock < managerDialogueBlock.Count - 1) currentBlockIndex = indexBlock;
+            
+
+            return managerDialogueBlock[currentBlockIndex].lines[0];
+        }
+
+        public DialogueData LoadBlock()
+        {
+            managerDialogueBlock[currentBlockIndex].ResetIndex();
+            if (currentBlockIndex < managerDialogueBlock.Count - 1) currentBlockIndex++;
+
+            return managerDialogueBlock[currentBlockIndex].lines[0];
         }
 
         private string GetRandomAnswer(List<DialogueData> list)
@@ -64,7 +74,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg {
 
         public void ResetNumber()
         {
-            index = 0;
+            currentBlockIndex = 0;
+            for (int i = 0; i < managerDialogueBlock.Count; i++)
+            {
+                managerDialogueBlock[i].ResetIndex();
+            }
         }
         
     }
