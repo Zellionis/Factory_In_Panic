@@ -12,9 +12,15 @@ namespace Com.IsartDigital.FactoryPanic.Sound {
 
 		[SerializeField] private SoundBank managerVoiceBank = default;
 		[SerializeField] private AudioSource managerVoiceSource = default;
+
+		[Space(20)]
+
 		[SerializeField] private SoundBank clickVoiceBank = default;
 		[SerializeField] private AudioSource clickSource = default;
 		[SerializeField] private SoundBank clickVoiceBackBank = default;
+
+		[Space(20)]
+
 		[SerializeField] private SoundBank completedBank = default;
 		[SerializeField] private AudioSource completedSource = default;
 
