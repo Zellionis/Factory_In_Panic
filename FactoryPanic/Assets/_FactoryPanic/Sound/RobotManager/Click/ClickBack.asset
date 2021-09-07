@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
-  m_Name: EndPart1
+  m_Script: {fileID: 11500000, guid: 150e15d176d69a74d8f88924b3cc7f1c, type: 3}
+  m_Name: ClickBack
   m_EditorClassIdentifier: 
-  lines:
-  - text: Merci pour ton travail.
-    speed: 0.03
-    sprite: {fileID: 0}
-    lastLine: 1
+  listOfSound:
+  - {fileID: 8300000, guid: 22276158cdd91cf4cb3fb6da36eb8575, type: 3}

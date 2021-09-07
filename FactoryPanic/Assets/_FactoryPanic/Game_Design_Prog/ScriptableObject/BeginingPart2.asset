@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: "Oh non d\u2019un verrou ! L\u2019usine fait encore des siennes."
-    speed: 0.05
+    speed: 0.015
     sprite: {fileID: 0}
     lastLine: 0
   - text: "Tout va \xEAtre chamboul\xE9... Quelle poisse..."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "Tient toi pr\xEAt, car \xE7a va se corser."
-    speed: 0.05
+    speed: 0.02
     sprite: {fileID: 0}
     lastLine: 1

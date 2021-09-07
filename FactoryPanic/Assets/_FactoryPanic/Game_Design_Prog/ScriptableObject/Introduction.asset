@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: Bonjour Humain !
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "J\u2019esp\xE8re que tu es pr\xEAt pour ton premier jour de travail."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "Aujourd\u2019hui, tu seras au poste des m\xE9tiers."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "Des jeunes robots viendront \xE0 toi afin que tu les aides \xE0 trouver
       leur futur travail."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: Ne te pose pas trop de question et fit toi aux apparences !
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1

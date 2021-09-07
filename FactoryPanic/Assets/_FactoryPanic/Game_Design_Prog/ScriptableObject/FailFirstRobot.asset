@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: "Mmmh.. C\u2019est vrai que ce poste n\u2019est pas le plus simple."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "Prend le robot de ton choix et met le dans la cat\xE9gorie de m\xE9tier
       qui te semble lui correspondre le mieux "
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1
