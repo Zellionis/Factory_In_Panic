@@ -9,23 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
-  m_Name: Part3
+  m_Script: {fileID: 11500000, guid: 096f656336f057f4b8b9afe0a549b523, type: 3}
+  m_Name: Bank_Sport
   m_EditorClassIdentifier: 
+  personality: 2
+  body: 3
   lines:
-  - text: zzz
-    speed: 0.1
+  - text: 1
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: zzzzzzzzz
-    speed: 0.1
+  - text: 2
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: ZZZZZzzzZZZZzzzzzzzzzzz
-    speed: 0.1
-    sprite: {fileID: 0}
-    lastLine: 0
-  - text: zzzzzzzzzzzzzzzz
-    speed: 0.1
-    sprite: {fileID: 0}
-    lastLine: 1

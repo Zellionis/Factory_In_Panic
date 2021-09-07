@@ -10,61 +10,64 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d9fd43b6410bdf4aba0935d3dfeb2f5, type: 3}
-  m_Name: RobotChefNarrativeScriptable
+  m_Name: _RobotChefNarrativeScriptable
   m_EditorClassIdentifier: 
   managerDialogueBlock:
   - {fileID: 11400000, guid: 2866ef5c06c3b404a93895a4d34ebf67, type: 2}
-  - {fileID: 11400000, guid: 698063b1790965d419ac77c0daa56832, type: 2}
   - {fileID: 11400000, guid: 908cd7eaf08a3bb41b79386067f9bd0f, type: 2}
+  - {fileID: 11400000, guid: 428de624ba7c7314d89518d1ea5bdaee, type: 2}
   - {fileID: 11400000, guid: 533aa2cb7ced44647b532ebc7f84ec69, type: 2}
+  - {fileID: 11400000, guid: b48f18920251c834f9de2bed7f5aaabe, type: 2}
+  - {fileID: 11400000, guid: 8a75daeafbf86614eaa7a8605c1befad, type: 2}
+  - {fileID: 11400000, guid: 698063b1790965d419ac77c0daa56832, type: 2}
   ManagerRemark:
   - text: Oof
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Tu es mauvais Jack.
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: "S\xE9rieux"
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Stop de troller
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   ManagerBoost:
   - text: Pog
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Poggers
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Let's goooo
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: YAEYdi
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   ManagerDoubtful:
   - text: mmmmh
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Sure de toi
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Je sais pas quoi te dire
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0
   - text: Ah okay
-    durationOfText: 0
+    speed: 0
     sprite: {fileID: 0}
     lastLine: 0

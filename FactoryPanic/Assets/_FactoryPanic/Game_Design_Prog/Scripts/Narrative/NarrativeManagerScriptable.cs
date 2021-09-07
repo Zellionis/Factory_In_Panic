@@ -55,7 +55,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         public DialogueData LoadBlock(int indexBlock)
         {
             managerDialogueBlock[currentBlockIndex].ResetIndex();
-            if (indexBlock < managerDialogueBlock.Count - 1) currentBlockIndex = indexBlock;
+            if (indexBlock < managerDialogueBlock.Count) currentBlockIndex = indexBlock;
             
 
             return managerDialogueBlock[currentBlockIndex].lines[0];

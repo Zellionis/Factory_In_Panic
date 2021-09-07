@@ -10,26 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
-  m_Name: Part1
+  m_Name: FailFirstRobot
   m_EditorClassIdentifier: 
   lines:
-  - text: Heyooo
-    speed: 0.1
+  - text: "Mmmh.. C\u2019est vrai que ce poste n\u2019est pas le plus simple."
+    speed: 0.05
     sprite: {fileID: 0}
     lastLine: 0
-  - text: How are ya?
-    speed: 0.1
-    sprite: {fileID: 0}
-    lastLine: 0
-  - text: I'm good, thanks you!
-    speed: 0.1
-    sprite: {fileID: 0}
-    lastLine: 0
-  - text: I'm talking alone, isn't it
-    speed: 0.1
-    sprite: {fileID: 0}
-    lastLine: 0
-  - text: My life is so sad....
-    speed: 0.1
+  - text: "Prend le robot de ton choix et met le dans la cat\xE9gorie de m\xE9tier
+      qui te semble lui correspondre le mieux "
+    speed: 0.05
     sprite: {fileID: 0}
     lastLine: 1
