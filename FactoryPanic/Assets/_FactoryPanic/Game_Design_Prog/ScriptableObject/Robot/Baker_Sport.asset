@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 1
   body: 3
   lines:
-  - text: 1
+  - text: "Humain, quel gout \xE0 la sueur, sal\xE9 ?"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "J\u2019ai invent\xE9 une nouvelle recette : le croissant prot\xE9in\xE9."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 3
   body: 0
   lines:
-  - text: 1
+  - text: "Finalement les pinceaux c\u2019est des alt\xE8res pour les doigts ? "
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "J\u2019aime bouger et me d\xE9penser"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

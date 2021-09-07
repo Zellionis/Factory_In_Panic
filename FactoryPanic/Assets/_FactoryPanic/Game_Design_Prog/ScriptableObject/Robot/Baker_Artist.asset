@@ -15,11 +15,12 @@ MonoBehaviour:
   personality: 1
   body: 0
   lines:
-  - text: 1
+  - text: "J\u2019ai gout\xE9 toutes les sauces, mais la peinture couleur saumon
+      est la moins bonne."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Pour cuisiner j\u2019utilise un tablier de peintre."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

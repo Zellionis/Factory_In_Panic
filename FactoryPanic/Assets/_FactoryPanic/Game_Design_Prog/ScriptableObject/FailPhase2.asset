@@ -9,17 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096f656336f057f4b8b9afe0a549b523, type: 3}
-  m_Name: Sport_Baker
+  m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
+  m_Name: FailPhase2
   m_EditorClassIdentifier: 
-  personality: 3
-  body: 1
   lines:
-  - text: "Tu connais le saut \xE0 la fourchette ? "
-    speed: 0
+  - text: "Tu t\u2019es tromp\xE9e beaucoup de fois. "
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "Ma passion c\u2019est le lancer d\u2019assiette."
-    speed: 0
+  - text: "Les humains sont pleins de ressource, je suis s\xFBr que tu vas trouver
+      une solution."
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0

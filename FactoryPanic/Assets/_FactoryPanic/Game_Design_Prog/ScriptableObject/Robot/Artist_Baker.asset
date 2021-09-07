@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 0
   body: 1
   lines:
-  - text: 1
+  - text: "J\u2019adore dessiner des bonhommes en ketchup sur les pattes."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: Je me sens plus artiste que cuisinier.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

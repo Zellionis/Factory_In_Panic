@@ -15,11 +15,12 @@ MonoBehaviour:
   personality: 0
   body: 2
   lines:
-  - text: 1
+  - text: Le logo Dollar est vraiment moche, je vais le refaire.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Je n\u2019ai jamais compris pourquoi on dessinait des montagnes sur les
+      graphiques."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
