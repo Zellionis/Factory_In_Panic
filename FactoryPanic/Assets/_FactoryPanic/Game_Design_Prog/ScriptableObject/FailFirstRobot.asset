@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FailFirstRobot
   m_EditorClassIdentifier: 
   lines:
-  - text: "Mmm.. C\u2019est vrai que se poste n\u2019est pas le plus simple."
+  - text: "Mmmh.. C\u2019est vrai que ce poste n\u2019est pas le plus simple."
     speed: 0.05
     sprite: {fileID: 0}
     lastLine: 0
