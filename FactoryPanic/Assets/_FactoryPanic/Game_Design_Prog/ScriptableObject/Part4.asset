@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: F I just woke up
-    durationOfText: 8
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: I'm lazy to think
-    durationOfText: 7
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 1

@@ -3,6 +3,7 @@
 ///   Date   : 06/09/2021 16:21
 ///-----------------------------------------------------------------
 
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,13 +17,23 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] private NarrativeManagerScriptable managerBox = default;
         [SerializeField] private List<GameObject> listDialogueObject = default;
 
+        private bool IsDisplaying = false;
+        private Coroutine currentCoroutine = default;
         private DialogueData currentLine = default;
 
         private void Start()
         {
             managerBox.ResetNumber();
-            currentLine = managerBox.CurrentDiscution;
-            box.text = currentLine.text;    
+            StartText(managerBox.CurrentDiscution);
+            
+        }
+
+        private void StartText(DialogueData dialogue)
+        {
+            currentLine = dialogue;
+            IsDisplaying = true;
+            box.text = "";
+            currentCoroutine = StartCoroutine(SlowText());
         }
 
         public void Open()
@@ -44,37 +55,61 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public void ShowNextText()
         {
+            if (!IsDisplaying)
+            {
+                if (managerBox.CurrentDiscution.lastLine == false)
+                {
+                    StartText(managerBox.NextLine());
+                }
+                else Close();
+            }
+            else
+            {
+                IsDisplaying = false;
+                box.text = currentLine.text;
+                StopCoroutine(currentCoroutine);
+                currentCoroutine = default;
+            }
 
-            if (managerBox.CurrentDiscution.lastLine==false) box.text = managerBox.NextLine().text;
-            else Close();
 
+        }
+
+        private IEnumerator SlowText()
+        {
+            foreach (char letter in currentLine.text.ToCharArray())
+            {
+                box.text += letter;
+                yield return new WaitForSeconds(currentLine.speed);
+
+            }
+            IsDisplaying = false;
         }
 
         public void ShowNextPunchline()
         {
-            box.text = managerBox.GetRandomPunchline;
+            StartText(managerBox.GetRandomPunchline);
         }
 
         public void ShowNextBoost()
         {
-            box.text = managerBox.GetRandomBoostAnswer;
+            StartText(managerBox.GetRandomBoostAnswer);
         }
 
         public void ShowNextDoubt()
         {
-            box.text = managerBox.GetRandomDoubtfullAnswer;
+            StartText(managerBox.GetRandomDoubtfullAnswer);
         }
 
         public void Load1()
         {
             Open();
-            box.text = managerBox.LoadBlock(1).text;
+            StartText(managerBox.LoadBlock(1));
         }
 
         public void Load2()
         {
             Open();
-            box.text = managerBox.LoadBlock(2).text;
+            StartText(managerBox.LoadBlock(2));
         }
     }
 }

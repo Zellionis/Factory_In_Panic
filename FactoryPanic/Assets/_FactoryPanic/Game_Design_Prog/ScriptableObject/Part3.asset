@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: zzz
-    durationOfText: 1
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: zzzzzzzzz
-    durationOfText: 2
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: ZZZZZzzzZZZZzzzzzzzzzzz
-    durationOfText: 3
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: zzzzzzzzzzzzzzzz
-    durationOfText: 2
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 1

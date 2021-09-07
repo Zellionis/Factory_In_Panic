@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: Heyooo
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: How are ya?
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: I'm good, thanks you!
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: I'm talking alone, isn't it
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: My life is so sad....
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 1

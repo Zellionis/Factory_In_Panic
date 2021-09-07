@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: Bip
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 0
   - text: Boop
-    durationOfText: 4
+    speed: 0.1
     sprite: {fileID: 0}
     lastLine: 1

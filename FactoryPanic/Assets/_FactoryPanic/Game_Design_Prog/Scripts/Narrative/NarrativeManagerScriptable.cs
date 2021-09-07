@@ -25,21 +25,21 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             }
         }
 
-        public string GetRandomPunchline
+        public DialogueData GetRandomPunchline
         {
             get
             {
                 return GetRandomAnswer(ManagerRemark);
             }
         }
-        public string GetRandomBoostAnswer
+        public DialogueData GetRandomBoostAnswer
         {
             get
             {
                 return GetRandomAnswer(ManagerBoost);
             }
         }
-        public string GetRandomDoubtfullAnswer
+        public DialogueData GetRandomDoubtfullAnswer
         {
             get
             {
@@ -69,12 +69,12 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             return managerDialogueBlock[currentBlockIndex].lines[0];
         }
 
-        private string GetRandomAnswer(List<DialogueData> list)
+        private DialogueData GetRandomAnswer(List<DialogueData> list)
         {
             int randomInt = UnityEngine.Random.Range(0, list.Count);
 
 
-            return list[randomInt].text;
+            return list[randomInt];
         }
 
         public void ResetNumber()
@@ -91,7 +91,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
     [Serializable]
     public struct DialogueData{
          public string text;
-         public float durationOfText;
+        [Range(0F,0.5F)]public float speed;
          public Animator sprite;
         public bool lastLine;
 
