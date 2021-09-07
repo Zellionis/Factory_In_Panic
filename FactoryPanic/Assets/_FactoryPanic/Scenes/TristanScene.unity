@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a7ba76073640d4d86eff23f25a6159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumRob: 1
+  NumRob: 5
   SpeedCarpet: 0.001
   StartCarpet: {x: -10, y: 0}
   Quart1Carpet: {x: -5, y: 0}

@@ -36,4 +36,9 @@ public class DragAndDrop : MonoBehaviour
     {
         return isDragging;
     }
+
+    public void SetTempPos(Vector2 vec2)
+    {
+        TempPos = vec2;
+    }
 }

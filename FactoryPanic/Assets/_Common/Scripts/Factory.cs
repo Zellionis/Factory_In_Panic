@@ -6,7 +6,7 @@ public class Factory : MonoBehaviour
 {
     // Start is called before the first frame update
     private int countGoodRob = 0;
-
+    
     [SerializeField] private int NumRob = 0;
 
     [SerializeField] private float SpeedCarpet = 0.0f;
@@ -45,43 +45,29 @@ public class Factory : MonoBehaviour
         CreateRobot();
         for (int i = 0; i < 3; i++)
         {
-            Robot rob = ListRobots[i].GetComponent<Robot>();
-            if (rob)
+            if (i < ListRobots.Count)
             {
-                rob.Imatricule = i+1;
+                Robot rob = ListRobots[i].GetComponent<Robot>();
+                if (rob)
+                {
+                    rob.Imatricule = i+1;
+                }
             }
         }
-
-        ListRobots[0].transform.position = Quart1Carpet;
-        ListRobots[1].transform.position = Quart2Carpet;
-        ListRobots[2].transform.position = EndCarpet;
+        
+        if(ListRobots.Count == 1)
+            ListRobots[0].transform.position = Quart1Carpet;
+        if(ListRobots.Count == 2)
+            ListRobots[1].transform.position = Quart2Carpet;
+        if(ListRobots.Count == 3)
+            ListRobots[2].transform.position = EndCarpet;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (StopCarpet)
-        {
-            CurrentTimeStop += Time.deltaTime;
-            if (timeStopCarpet <= CurrentTimeStop)
-            {
-                CurrentTimeStop = 0;
-                StopCarpet = false;
-                for (int i = 0; i < 4; i++)
-                {
-                    Robot rob = ListRobots[i].GetComponent<Robot>();
-                    if (rob)
-                    {
-                        rob.Imatricule -= 1;
-                        if (rob.Imatricule == -1)
-                            ListRobots[4].GetComponent<Robot>().Imatricule = 3;
-                    }
-                } 
-                
-                
-            }
-            TimeLerp = 0;
-        }
+            PauseCarpet();
         else
             MoveCarpet();
     }
@@ -116,27 +102,57 @@ public class Factory : MonoBehaviour
                         TimeLerp = 1.0f;
                     
                     if (rob.Imatricule == 0)
-                    { 
-                        ListRobots[i].transform.position = Vector2.Lerp(Quart1Carpet,StartCarpet, TimeLerp);
-                    }
-                    
+                        MovingAndDraging(Quart1Carpet,StartCarpet, i);
                     else if (rob.Imatricule == 1)
-                    { 
-                        ListRobots[i].transform.position = Vector2.Lerp(Quart2Carpet, Quart1Carpet, TimeLerp);
-                    }
-                    else if (rob.Imatricule == 2) 
-                    { 
-                        ListRobots[i].transform.position = Vector2.Lerp(EndCarpet, Quart2Carpet, TimeLerp);
-                    }
+                        MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
+                    else if (rob.Imatricule == 2)
+                        MovingAndDraging(EndCarpet, Quart2Carpet, i);
                     else if (rob.Imatricule == 3)
-                    { 
-                        ListRobots[i].transform.position = Vector2.Lerp(Spawn, EndCarpet, TimeLerp);
-                    }
+                        MovingAndDraging(Spawn, EndCarpet, i);
 
                     if (TimeLerp == 1.0f)
                         StopCarpet = true;
                 }
             }
         }
+    }
+
+    void MovingAndDraging(Vector2 start, Vector2 end, int index)
+    {
+        DragAndDrop drag = ListRobots[index].GetComponent<DragAndDrop>();
+        if (drag)
+        {
+            if (drag.IsDragging())
+                drag.SetTempPos(Vector2.Lerp(start, end, TimeLerp));
+                
+            else
+                ListRobots[index].transform.position = Vector2.Lerp(start, end, TimeLerp);
+        }
+    }
+
+    void PauseCarpet()
+    {
+        CurrentTimeStop += Time.deltaTime;
+        if (timeStopCarpet <= CurrentTimeStop)
+        {
+            CurrentTimeStop = 0;
+            StopCarpet = false;
+            for (int i = 0; i < 4; i++)
+            {
+                if (i < ListRobots.Count)
+                {
+                    Robot rob = ListRobots[i].GetComponent<Robot>();
+                    if (rob)
+                    {
+                        rob.Imatricule -= 1;
+                        if (rob.Imatricule == -1 && ListRobots.Count == 5)
+                            ListRobots[4].GetComponent<Robot>().Imatricule = 3;
+                    }
+                }
+            } 
+                
+                
+        }
+        TimeLerp = 0;
     }
 }
