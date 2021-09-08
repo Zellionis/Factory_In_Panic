@@ -8,6 +8,8 @@ public class Cleaner : MonoBehaviour
      public ClassRobot Type;
 
      [SerializeField] private Factory _factory=default;
+     [SerializeField] private Animator _animator=default;
+     [SerializeField] private Animator _animatorPanel=default;
      [SerializeField] private List<ParticleSystem> yesEffect=default;
      [SerializeField] private List<ParticleSystem> noEffect =default;
 
@@ -38,6 +40,8 @@ public class Cleaner : MonoBehaviour
 
     public void PlayYesParticle()
     {
+        _animator.SetTrigger("True");
+        _animatorPanel.SetTrigger("True");
         for (int i = 0; i < yesEffect.Count; i++)
         {
             yesEffect[i].Play();
@@ -45,6 +49,8 @@ public class Cleaner : MonoBehaviour
     }
     public void PlayNoParticle()
     {
+        _animator.SetTrigger("Wrong");
+        _animatorPanel.SetTrigger("Wrong");
         for (int i = 0; i < noEffect.Count; i++)
         {
             noEffect[i].Play();
