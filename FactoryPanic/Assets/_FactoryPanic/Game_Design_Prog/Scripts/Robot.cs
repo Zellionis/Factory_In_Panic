@@ -8,6 +8,7 @@ public class Robot : MonoBehaviour
 {
     // Start is called before the first frame update
     public int Imatricule = 4;
+    public bool sortable = false;
     private float TimeLerp = 0;
     [SerializeField] private NarrativeRobotBank bank;
     [SerializeField] private TextMesh robotText = default;
@@ -44,6 +45,19 @@ public class Robot : MonoBehaviour
             robotText.text += letter;
             yield return new WaitForSeconds(dialogue.speed);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Cleaner")
+            sortable = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        
+        if (other.tag == "Cleaner")
+            sortable = false;
     }
 
     public ClassRobot GetPersonality()

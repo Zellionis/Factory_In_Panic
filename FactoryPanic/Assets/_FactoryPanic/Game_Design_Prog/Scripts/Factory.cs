@@ -79,11 +79,12 @@ public class Factory : MonoBehaviour
     {
         for (int i = 0; i < NumRob; i++)
         {
-            GameObject rob = Instantiate(ListType[0]);
-            rob.tag = "Robot";
-            rob.transform.position = Spawn;
-            
-            ListRobots.Add(rob);
+            GameObject go = Instantiate(ListType[0]);
+            go.tag = "Robot";
+            go.transform.position = Spawn;
+            Robot rob = go.GetComponent<Robot>();
+            rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
+            ListRobots.Add(go);
         }
     }
 
@@ -147,11 +148,13 @@ public class Factory : MonoBehaviour
                     Robot rob = ListRobots[i].GetComponent<Robot>();
                     if (rob)
                     {
-                        
-                        
                         rob.Imatricule -= 1;
                         if (rob.Imatricule == -1 && ListRobots.Count == 5)
+                        {
                             ListRobots[4].GetComponent<Robot>().Imatricule = 3;
+                            ListRobots.Remove(rob.gameObject);
+                            Destroy(rob.gameObject);
+                        }
                     }
                 }
             } 
@@ -161,14 +164,28 @@ public class Factory : MonoBehaviour
         TimeLerp = 0;
     }
 
-    public void Sorter(bool type)
+    public void Sorter(bool type, int imatricule)
     {
         if (type == true)
             choices[0]++;
         else 
             choices[1]++;
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i < ListRobots.Count)
+            {
+                Robot rob = ListRobots[i].GetComponent<Robot>();
+                if (rob.Imatricule == imatricule)
+                {
+                    ListRobots.Remove(rob.gameObject);
+                    Destroy(rob.gameObject);
+                }
+            }
+        }
         
-        Debug.Log(choices.ToString());
+        Debug.Log("Good:" + choices[0].ToString());
+        Debug.Log("Bad:" + choices[1].ToString());
             
     }
 }
