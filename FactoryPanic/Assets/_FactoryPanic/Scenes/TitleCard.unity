@@ -158,6 +158,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 801282642832035090, guid: 34830831b5e79fc44a9a7b6391b7e8ed,
+        type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3414002754374279831, guid: 34830831b5e79fc44a9a7b6391b7e8ed,
         type: 3}
       propertyPath: m_textInfo.characterCount

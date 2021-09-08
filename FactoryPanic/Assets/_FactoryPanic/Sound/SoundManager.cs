@@ -28,6 +28,12 @@ namespace Com.IsartDigital.FactoryPanic.Sound {
 
 		[SerializeField] private AudioSource lostSource = default;
 
+		[Space(20)]
+
+		[SerializeField] private SoundBank robotBank = default;
+		[SerializeField] private AudioSource robotSource = default;
+		[SerializeField] private AudioSource handSource = default;
+
 		private void Awake(){
 			if (instance){
 				Destroy(gameObject);
@@ -80,6 +86,17 @@ namespace Com.IsartDigital.FactoryPanic.Sound {
 				managerVoiceSource.clip = managerVoiceBank.GetRandomSound();
 				managerVoiceSource.Play();
 			}
+		}
+
+		public void PlayGrab()
+        {
+			if (!robotSource.isPlaying)
+			{
+				robotSource.clip = robotBank.GetRandomSound();
+				robotSource.Play();
+			}
+
+			if (!handSource.isPlaying) handSource.Play();
 		}
 
 		private void OnDestroy(){

@@ -1,3 +1,4 @@
+using Com.IsartDigital.FactoryPanic.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        SoundManager.Instance.PlayGrab();
         Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
         isDragging = true;
         TempPos = transform.position;   
