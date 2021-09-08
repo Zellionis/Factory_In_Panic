@@ -16,6 +16,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] public List<DialogueData> ManagerBoost = default;
         [SerializeField] public List<DialogueData> ManagerDoubtful = default;
         private int currentBlockIndex = 0;
+        private int oldChapter = 0;
         private int previewsRandomIndex = 0;
         public DialogueData CurrentDiscution
         {
@@ -52,8 +53,10 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             return managerDialogueBlock[currentBlockIndex].NextLine();
         }
 
+
         public DialogueData LoadBlock(int indexBlock)
         {
+            oldChapter = currentBlockIndex;
             managerDialogueBlock[currentBlockIndex].ResetIndex();
             if (indexBlock < managerDialogueBlock.Count) currentBlockIndex = indexBlock;
             
@@ -61,8 +64,14 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             return managerDialogueBlock[currentBlockIndex].lines[0];
         }
 
+        public DialogueData PreviousChapter()
+        {
+
+        }
+
         public DialogueData LoadBlock()
         {
+            oldChapter = currentBlockIndex;
             managerDialogueBlock[currentBlockIndex].ResetIndex();
             if (currentBlockIndex < managerDialogueBlock.Count - 1) currentBlockIndex++;
 
