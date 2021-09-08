@@ -66,7 +66,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public DialogueData PreviousChapter()
         {
-
+            return new DialogueData();
         }
 
         public DialogueData LoadBlock()
