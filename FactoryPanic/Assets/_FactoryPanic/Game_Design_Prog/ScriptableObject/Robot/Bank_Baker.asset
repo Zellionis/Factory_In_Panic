@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 2
   body: 1
   lines:
-  - text: 1
+  - text: "Ma cuisine a moi, elle est \xE9toil\xE9e."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Je vais monter \xE0 la t\xEAte d\u2019une exploitation de caviar."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

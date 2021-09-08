@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 3
   body: 1
   lines:
-  - text: 1
+  - text: "Tu connais le saut \xE0 la fourchette ? "
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Ma passion c\u2019est le lancer d\u2019assiette."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

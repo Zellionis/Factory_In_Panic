@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: Quelle performance incroyable !
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
   - text: "D\xE9sormais nous apprendrons \xE0 mieux connaitre les robots au lieu
       de se baser uniquement sur leur physique."
-    speed: 0.05
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "D\u2019ailleurs, je te nomme chef du poste des m\xE9tiers, Humain. Merci
-      encore pour cette aide pr\xE9cieuse."
-    speed: 0.05
+  - text: "Pour te f\xE9liciter, je te nomme chef du poste des m\xE9tiers, Humain.
+      Merci encore pour cette aide pr\xE9cieuse."
+    speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1

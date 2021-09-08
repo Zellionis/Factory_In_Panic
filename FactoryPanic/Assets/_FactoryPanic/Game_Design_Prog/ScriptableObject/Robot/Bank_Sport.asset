@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 2
   body: 3
   lines:
-  - text: 1
+  - text: "\xCAtre sportif pro, \xE7a rapporte beaucoup non ?"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "J\u2019aimerai bien \xEAtre le banquier de M botP."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 3
   body: 2
   lines:
-  - text: 1
+  - text: Moi je sais soulever des coffres-forts !
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Ma cravate c\u2019est juste pour le style !"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

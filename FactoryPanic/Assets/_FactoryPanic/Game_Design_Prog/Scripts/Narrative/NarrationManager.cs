@@ -3,6 +3,7 @@
 ///   Date   : 06/09/2021 16:21
 ///-----------------------------------------------------------------
 
+using Com.IsartDigital.FactoryPanic.Sound;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -46,7 +47,6 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public void Close()
         {
-            Debug.Log("Close");
             for (int i = 0; i < listDialogueObject.Count; i++)
             {
                 listDialogueObject[i].SetActive(false);
@@ -78,6 +78,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         {
             foreach (char letter in currentLine.text.ToCharArray())
             {
+                if (!(letter.ToString() == " ")) SoundManager.Instance.PlayVoiceManager();
                 box.text += letter;
                 yield return new WaitForSeconds(currentLine.speed);
 

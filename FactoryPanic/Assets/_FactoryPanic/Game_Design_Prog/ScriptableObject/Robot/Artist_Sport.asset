@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 0
   body: 3
   lines:
-  - text: 1
+  - text: "D\xE8s que je vois des ballons, je pense \xE0 Picasso."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "J\u2019aimerai peindre des sportifs "
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

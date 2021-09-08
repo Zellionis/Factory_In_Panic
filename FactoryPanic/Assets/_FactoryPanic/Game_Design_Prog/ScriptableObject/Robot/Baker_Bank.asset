@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 1
   body: 2
   lines:
-  - text: 1
+  - text: "Je vais cr\xE9er la meilleure recette du monde : Le mille-billet."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: "Plus tard j\u2019aurai un tablier de cuisinier tout vert."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

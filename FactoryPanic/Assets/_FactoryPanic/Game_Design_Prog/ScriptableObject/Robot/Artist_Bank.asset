@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 0
   body: 2
   lines:
-  - text: 1
+  - text: Le logo Dollar est vraiment moche, je vais le refaire.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: Mes peintures valent de l'or.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

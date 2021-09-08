@@ -15,11 +15,11 @@ MonoBehaviour:
   personality: 2
   body: 0
   lines:
-  - text: 1
+  - text: Je suis un grand fan de Picsou.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: 2
+  - text: Si un urinoir vaut des millions, alors une toilette en vaut des milliards.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
