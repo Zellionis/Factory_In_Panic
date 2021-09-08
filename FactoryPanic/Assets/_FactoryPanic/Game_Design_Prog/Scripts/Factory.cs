@@ -1,4 +1,5 @@
 using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
+using Com.IsartDigital.FactoryPanic.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -174,9 +175,17 @@ public class Factory : MonoBehaviour
     public void Sorter(bool type, int imatricule)
     {
         if (type == true)
+        {
             choices[0]++;
-        else 
+            SoundManager.Instance.PlayCompletedSound();
+            if (choices[0] == 10) narrationManager.Load2();
+        }
+        else
+        {
             choices[1]++;
+            SoundManager.Instance.PlayClickLost();
+            if (choices[0] == 0 && choices[1] == 1) narrationManager.Load6();
+        }
 
         for (int i = 0; i < 4; i++)
         {

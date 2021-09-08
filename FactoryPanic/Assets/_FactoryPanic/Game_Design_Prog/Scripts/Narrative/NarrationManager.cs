@@ -72,7 +72,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 {
                     StartText(managerBox.NextLine());
                 }
-                else Close();
+                else
+                {
+                    if (managerBox.CurrentChapter == 1) Load3();
+                    else Close();
+                }
             }
             else
             {
@@ -128,6 +132,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         {
             Open();
             StartText(managerBox.LoadBlock(2));
+            ScreenShake.Instance.TriggerScreenShake();
         }
         public void Load4()
         {

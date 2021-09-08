@@ -55,6 +55,11 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
     void Update()
     {
         if (isDragging)

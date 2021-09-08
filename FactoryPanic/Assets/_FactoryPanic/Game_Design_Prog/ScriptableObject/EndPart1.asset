@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: EndPart1
   m_EditorClassIdentifier: 
   lines:
+  - text: "Tu es tr\xE8s efficace ! Visiblement, les humains sont dou\xE9s pour juger
+      les apparences. "
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
   - text: Merci pour ton travail.
     speed: 0.03
     sprite: {fileID: 0}

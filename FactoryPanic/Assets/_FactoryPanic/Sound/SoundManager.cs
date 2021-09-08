@@ -24,6 +24,10 @@ namespace Com.IsartDigital.FactoryPanic.Sound {
 		[SerializeField] private SoundBank completedBank = default;
 		[SerializeField] private AudioSource completedSource = default;
 
+		[Space(20)]
+
+		[SerializeField] private AudioSource lostSource = default;
+
 		private void Awake(){
 			if (instance){
 				Destroy(gameObject);
@@ -57,6 +61,14 @@ namespace Com.IsartDigital.FactoryPanic.Sound {
 			{
 				clickSource.clip = clickVoiceBackBank.GetSoundAt(0);
 				clickSource.Play();
+			}
+		}
+
+		public void PlayClickLost()
+        {
+			if (!lostSource.isPlaying)
+			{
+				lostSource.Play();
 			}
 		}
 
