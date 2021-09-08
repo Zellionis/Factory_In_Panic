@@ -22,8 +22,8 @@ MonoBehaviour:
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "D\u2019ailleurs, je te nomme chef du poste des m\xE9tiers, Humain. Merci
-      encore pour cette aide pr\xE9cieuse."
+  - text: "Pour te f\xE9liciter, je te nomme chef du poste des m\xE9tiers, Humain.
+      Merci encore pour cette aide pr\xE9cieuse."
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1
