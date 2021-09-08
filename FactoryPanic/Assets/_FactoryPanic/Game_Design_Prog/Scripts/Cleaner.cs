@@ -7,7 +7,9 @@ public class Cleaner : MonoBehaviour
 {
      public ClassRobot Type;
 
-     [SerializeField] private Factory _factory;
+     [SerializeField] private Factory _factory=default;
+     [SerializeField] private List<ParticleSystem> yesEffect=default;
+     [SerializeField] private List<ParticleSystem> noEffect =default;
 
 
      private void OnTriggerEnter2D(Collider2D other)
@@ -18,18 +20,38 @@ public class Cleaner : MonoBehaviour
                if (drag)
                {
                     Robot rob = other.gameObject.GetComponent<Robot>();
-                    if (rob)
+                if (rob)
+                {
+                    if (Type == rob.GetPersonality())
                     {
-                         if (Type == rob.GetPersonality())
-                              drag.HitCleaner(_factory, rob.Imatricule, true);
-                         else
-                              drag.HitCleaner(_factory, rob.Imatricule, false);
+                        drag.HitCleaner(_factory, rob.Imatricule, true,this);
+                        
+                    }
+                    else { 
+                        drag.HitCleaner(_factory, rob.Imatricule, false,this);
+                        
+                    }
                     }
                }
           }
      }
 
-     private void OnTriggerExit2D(Collider2D other)
+    public void PlayYesParticle()
+    {
+        for (int i = 0; i < yesEffect.Count; i++)
+        {
+            yesEffect[i].Play();
+        }
+    }
+    public void PlayNoParticle()
+    {
+        for (int i = 0; i < noEffect.Count; i++)
+        {
+            noEffect[i].Play();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
      {
           if (other.tag == "Robot")
           {
@@ -40,7 +62,7 @@ public class Cleaner : MonoBehaviour
                     if (rob)
                     {
                          if (Type == rob.GetPersonality())
-                              drag.HitCleaner(_factory, -2, true);
+                              drag.HitCleaner(_factory, -2, true,this);
                     }
                }
           }

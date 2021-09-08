@@ -16,6 +16,7 @@ public class DragAndDrop : MonoBehaviour
     private Factory _factory = null;
     private int imatricule = -2;
     private bool isGood = false;
+    private Cleaner triggeredVaccum = default;
     
 
 
@@ -51,6 +52,9 @@ public class DragAndDrop : MonoBehaviour
         transform.position = TempPos;
         if (imatricule != -2)
         {
+            if (isGood) triggeredVaccum?.PlayYesParticle();
+            else triggeredVaccum?.PlayNoParticle();
+
             _factory.Sorter(isGood,imatricule);
         }
     }
@@ -79,10 +83,12 @@ public class DragAndDrop : MonoBehaviour
         TempPos = vec2;
     }
 
-    public void HitCleaner(Factory fact, int index,bool choices)
+    public void HitCleaner(Factory fact, int index,bool choices,Cleaner vaccum)
     {
         _factory = fact;
         imatricule = index;
         isGood = choices;
+        triggeredVaccum = vaccum;
     }
+
 }
