@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,8 @@ public class Factory : MonoBehaviour
     [SerializeField] 
     List<GameObject> ListType = new List<GameObject>();
     
+    private int[] choices = new int[3];
+    
     void Start()
     {
         CreateRobot();
@@ -76,8 +79,8 @@ public class Factory : MonoBehaviour
     {
         for (int i = 0; i < NumRob; i++)
         {
-            GameObject rob = Instantiate(ListType[0]); 
-            
+            GameObject rob = Instantiate(ListType[0]);
+            rob.tag = "Robot";
             rob.transform.position = Spawn;
             
             ListRobots.Add(rob);
@@ -144,6 +147,8 @@ public class Factory : MonoBehaviour
                     Robot rob = ListRobots[i].GetComponent<Robot>();
                     if (rob)
                     {
+                        
+                        
                         rob.Imatricule -= 1;
                         if (rob.Imatricule == -1 && ListRobots.Count == 5)
                             ListRobots[4].GetComponent<Robot>().Imatricule = 3;
@@ -155,4 +160,17 @@ public class Factory : MonoBehaviour
         }
         TimeLerp = 0;
     }
+
+    public void Sorter(bool type)
+    {
+        if (type == true)
+            choices[0]++;
+        else 
+            choices[1]++;
+        
+        Debug.Log(choices.ToString());
+            
+    }
 }
+
+

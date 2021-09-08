@@ -1,3 +1,4 @@
+using System;
 using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,6 +45,12 @@ public class Robot : MonoBehaviour
             yield return new WaitForSeconds(dialogue.speed);
         }
     }
+
+    public ClassRobot GetPersonality()
+    {
+        return personality;
+    }
+    
 }
 public enum ClassRobot
 {

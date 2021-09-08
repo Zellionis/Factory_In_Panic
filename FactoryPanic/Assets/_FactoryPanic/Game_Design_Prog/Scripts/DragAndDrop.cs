@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,32 @@ public class DragAndDrop : MonoBehaviour
     // Start is called before the first frame update
     private bool isDragging = false;
     private Vector2 TempPos = Vector2.zero;
+    
+    [SerializeField] private Texture2D cursor1;
+    [SerializeField] private Texture2D cursor2;
+    [SerializeField] private Texture2D cursor3;
 
+
+    private void OnMouseEnter()
+    {
+        if(!isDragging)
+            Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.ForceSoftware);
+        else
+            Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
+    private void OnMouseExit()
+    {
+        if(!isDragging)
+            Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
+        else
+            Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
+
+    }
 
     private void OnMouseDown()
     {
-
+        Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
         isDragging = true;
         TempPos = transform.position;   
       
@@ -19,6 +41,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
+        Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
         isDragging = false;
         transform.position = TempPos;
     }
