@@ -19,8 +19,7 @@ MonoBehaviour:
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "Je n\u2019ai jamais compris pourquoi on dessinait des montagnes sur les
-      graphiques."
+  - text: Mes peintures valent de l'or.
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

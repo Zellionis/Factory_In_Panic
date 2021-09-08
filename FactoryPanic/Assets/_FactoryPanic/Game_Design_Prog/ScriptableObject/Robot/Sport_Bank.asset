@@ -19,7 +19,7 @@ MonoBehaviour:
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: Moi je sais soulever des coffres-forts !
+  - text: "Ma cravate c\u2019est juste pour le style !"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

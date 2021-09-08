@@ -30,6 +30,10 @@ MonoBehaviour:
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
+  - text: "Voici les m\xE9tiers : Artiste, Sportif, Cuisinier et Banquier "
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
   - text: Ne te pose pas trop de question et fit toi aux apparences !
     speed: 0.03
     sprite: {fileID: 0}
