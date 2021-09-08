@@ -74,7 +74,7 @@ public class Factory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!narrationManager.TextShowed)
+        if (!(narrationManager.TextShowed) &&!(HUD.stopped))
         {
             if (StopCarpet)
                 PauseCarpet();

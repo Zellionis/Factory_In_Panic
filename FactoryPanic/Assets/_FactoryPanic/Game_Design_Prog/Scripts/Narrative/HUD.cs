@@ -11,17 +11,21 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
     public class HUD : MonoBehaviour {
 
         [SerializeField] private GameObject pauseScreen = default;
+        [SerializeField] private Animator animatorPause = default;
+        static public bool stopped = false;
 
         public void Pause()
         {
-            Time.timeScale = 0;
             pauseScreen.SetActive(true);
+            stopped = true;
+            animatorPause.SetBool("Open", true);
         }
 
         public void Continue()
         {
-            Time.timeScale = 1;
-            pauseScreen.SetActive(false);
+            stopped = false;
+            animatorPause.SetBool("Open", false);
+            //pauseScreen.SetActive(false);
         }
 
         public void Quit()
