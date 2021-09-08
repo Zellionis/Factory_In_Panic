@@ -22,6 +22,15 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         private Coroutine currentCoroutine = default;
         private DialogueData currentLine = default;
 
+        private bool textShowed = true;
+        public bool TextShowed
+        {
+            get
+            {
+                return textShowed;
+            }
+        }
+
         private void Start()
         {
             managerBox.ResetNumber();
@@ -39,6 +48,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public void Open()
         {
+            textShowed = true;
             for (int i = 0; i < listDialogueObject.Count; i++)
             {
                 listDialogueObject[i].SetActive(true);
@@ -47,6 +57,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         public void Close()
         {
+            textShowed = false;
             for (int i = 0; i < listDialogueObject.Count; i++)
             {
                 listDialogueObject[i].SetActive(false);

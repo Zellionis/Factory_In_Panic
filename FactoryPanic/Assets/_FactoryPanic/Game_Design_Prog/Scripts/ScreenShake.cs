@@ -28,11 +28,6 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg {
 			instance = this;
 		}
 
-        private void Start()
-        {
-			TriggerScreenShake();
-        }
-
         public void TriggerScreenShake()
         {
 			StartCoroutine(Shake());

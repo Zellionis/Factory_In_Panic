@@ -1,3 +1,4 @@
+using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,19 +14,19 @@ public class Factory : MonoBehaviour
     [SerializeField] private float SpeedCarpet = 0.0f;
 
     [SerializeField]
-    Vector2 StartCarpet = Vector2.zero;
+    Transform StartCarpet = default;
     
     [SerializeField]
-    Vector2 Quart1Carpet = Vector2.zero;
+    Transform Quart1Carpet = default;
     
     [SerializeField]
-    Vector2 Quart2Carpet = Vector2.zero;
+    Transform Quart2Carpet = default;
     
     [SerializeField]
-    Vector2 EndCarpet = Vector2.zero;
+    Transform EndCarpet = default;
     
     [SerializeField]
-    Vector2 Spawn = Vector2.zero;
+    Transform Spawn = default;
 
     [SerializeField] 
     private float timeStopCarpet = 0.0f;
@@ -42,6 +43,9 @@ public class Factory : MonoBehaviour
     List<GameObject> ListType = new List<GameObject>();
     
     private int[] choices = new int[3];
+
+    [SerializeField]
+    private NarrationManager narrationManager = default;
     
     void Start()
     {
@@ -59,20 +63,23 @@ public class Factory : MonoBehaviour
         }
         
         if(ListRobots.Count == 1)
-            ListRobots[0].transform.position = Quart1Carpet;
+            ListRobots[0].transform.position = Quart1Carpet.position;
         if(ListRobots.Count == 2)
-            ListRobots[1].transform.position = Quart2Carpet;
+            ListRobots[1].transform.position = Quart2Carpet.position;
         if(ListRobots.Count == 3)
-            ListRobots[2].transform.position = EndCarpet;
+            ListRobots[2].transform.position = EndCarpet.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (StopCarpet)
-            PauseCarpet();
-        else
-            MoveCarpet();
+        if (!narrationManager.TextShowed)
+        {
+            if (StopCarpet)
+                PauseCarpet();
+            else
+                MoveCarpet();
+        }
     }
 
     void CreateRobot()
@@ -81,7 +88,7 @@ public class Factory : MonoBehaviour
         {
             GameObject go = Instantiate(ListType[0]);
             go.tag = "Robot";
-            go.transform.position = Spawn;
+            go.transform.position = Spawn.position;
             Robot rob = go.GetComponent<Robot>();
             rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
             ListRobots.Add(go);
@@ -121,16 +128,16 @@ public class Factory : MonoBehaviour
         }
     }
 
-    void MovingAndDraging(Vector2 start, Vector2 end, int index)
+    void MovingAndDraging(Transform start, Transform end, int index)
     {
         DragAndDrop drag = ListRobots[index].GetComponent<DragAndDrop>();
         if (drag)
         {
             if (drag.IsDragging())
-                drag.SetTempPos(Vector2.Lerp(start, end, TimeLerp));
+                drag.SetTempPos(Vector2.Lerp(start.position, end.position, TimeLerp));
                 
             else
-                ListRobots[index].transform.position = Vector2.Lerp(start, end, TimeLerp);
+                ListRobots[index].transform.position = Vector2.Lerp(start.position, end.position, TimeLerp);
         }
     }
 
