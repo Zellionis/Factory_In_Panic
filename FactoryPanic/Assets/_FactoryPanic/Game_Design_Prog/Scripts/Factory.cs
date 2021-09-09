@@ -225,7 +225,8 @@ public class Factory : MonoBehaviour
                 if (choices[0] == nRobotToCompletePhase1) {
                     choices[0] = 0;
                     choices[1] = 0;
-                    narrationManager.Load2(); 
+                    narrationManager.Load2();
+                    phaseTwo = true;
                 }
             }
             else
