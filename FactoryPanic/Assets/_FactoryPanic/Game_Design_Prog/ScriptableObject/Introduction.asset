@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b5e032b9bf12940a9861752be6f8fe, type: 3}
+  m_Name: Introduction
+  m_EditorClassIdentifier: 
+  lines:
+  - text: Bonjour Humain !
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "J\u2019esp\xE8re que tu es pr\xEAt pour ton premier jour de travail."
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "Aujourd\u2019hui, tu seras au poste des m\xE9tiers."
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "Des jeunes robots viendront \xE0 toi afin que tu les aides \xE0 trouver
+      leur futur travail."
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "Voici les m\xE9tiers : Artiste, Sportif, Cuisinier et Banquier "
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Ne te pose pas trop de questions et fis toi aux apparences !
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 1

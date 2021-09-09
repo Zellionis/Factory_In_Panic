@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ArtistPanel
+  m_Controller: {fileID: 9100000, guid: b39203d1ccc59c54fbc54b5fcc6b1108, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2836dbfc16dfe4d47b902b4ea841e616, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 29992773180f091459c7b9dc8ffcfd59, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d28f858aa30a33d41bdba7c066259e41, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 54e0280cd88a48c439058a54e0b450fb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fba562327a1301a4385c1dd545bcb430, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3acef288ad1a8b64eaac0c64e1ed2d89, type: 2}

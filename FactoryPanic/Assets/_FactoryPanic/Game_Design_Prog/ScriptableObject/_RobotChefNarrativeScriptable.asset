@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9fd43b6410bdf4aba0935d3dfeb2f5, type: 3}
+  m_Name: _RobotChefNarrativeScriptable
+  m_EditorClassIdentifier: 
+  managerDialogueBlock:
+  - {fileID: 11400000, guid: 2866ef5c06c3b404a93895a4d34ebf67, type: 2}
+  - {fileID: 11400000, guid: 428de624ba7c7314d89518d1ea5bdaee, type: 2}
+  - {fileID: 11400000, guid: 533aa2cb7ced44647b532ebc7f84ec69, type: 2}
+  - {fileID: 11400000, guid: b48f18920251c834f9de2bed7f5aaabe, type: 2}
+  - {fileID: 11400000, guid: 908cd7eaf08a3bb41b79386067f9bd0f, type: 2}
+  - {fileID: 11400000, guid: 8a75daeafbf86614eaa7a8605c1befad, type: 2}
+  - {fileID: 11400000, guid: 698063b1790965d419ac77c0daa56832, type: 2}
+  - {fileID: 11400000, guid: 19de77b0f38c4b84d8530498cac25155, type: 2}
+  ManagerRemark:
+  - text: Oof
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Tu es mauvais Jack.
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "S\xE9rieux"
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Stop de troller
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  ManagerBoost:
+  - text: Pog
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Poggers
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Let's goooo
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: YAEYdi
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  ManagerDoubtful:
+  - text: mmmmh
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Sure de toi
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Je sais pas quoi te dire
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: Ah okay
+    speed: 0
+    sprite: {fileID: 0}
+    lastLine: 0
