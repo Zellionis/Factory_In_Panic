@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Factory : MonoBehaviour
 {
@@ -100,8 +101,17 @@ public class Factory : MonoBehaviour
             go.tag = "Robot";
             go.transform.position = Spawn.position;
             Robot rob = go.GetComponent<Robot>();
-            rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
-            Rg.TypeRobot(go,ClassRobot.Artiste);
+            int rand = UnityEngine.Random.Range(0, 4);
+            if(rand == 0)
+                rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
+            else if(rand == 1)
+                rob.SetClassRobot(ClassRobot.Banquier, ClassRobot.Banquier);
+            else if(rand == 2)
+                rob.SetClassRobot(ClassRobot.Cuisto, ClassRobot.Cuisto);
+            else if(rand == 3)
+                rob.SetClassRobot(ClassRobot.Sportif, ClassRobot.Sportif);
+            
+            Rg.TypeRobot(go,rob.GetPersonality());
             ListRobots.Add(go);
         }
     }
