@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blackscreen2
+  m_Controller: {fileID: 9100000, guid: 97b0749021ddf2c4f8e033c6a828cc66, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 08cc8056ac3ba78489c52c52a5584ba1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 08cc8056ac3ba78489c52c52a5584ba1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79545dde58453f84f9f1a4cfd282e655, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0bf388001356cb24c91a97608ec6b740, type: 2}

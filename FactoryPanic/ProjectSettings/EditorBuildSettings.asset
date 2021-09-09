@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_FactoryPanic/Scenes/Narration_test.unity
     guid: cab473318ad48cf48b6fe6d6f10a03ba
+  - enabled: 1
+    path: Assets/_FactoryPanic/Scenes/Credit.unity
+    guid: 893146c891e54e94cbfd13be612e2220
   m_configObjects: {}

@@ -18,6 +18,8 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] private NarrativeManagerScriptable managerBox = default;
         [SerializeField] private List<GameObject> listDialogueObject = default;
         [SerializeField] private Animator face = default;
+        [SerializeField] private HUD blackscreen = default;
+        [SerializeField] private Factory factory = default;
 
         private bool IsDisplaying = false;
         private Coroutine currentCoroutine = default;
@@ -87,7 +89,13 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                     if (managerBox.CurrentChapter == 1) 
                     {
                         SoundManager.Instance.SpeedUpMusic();
+                        factory.UpdateHUD();
                         Load3(); 
+                    }
+                    else if (managerBox.CurrentChapter == 5)
+                    {
+                        blackscreen.Hide();
+                        Close();
                     }
                     else Close();
                 }

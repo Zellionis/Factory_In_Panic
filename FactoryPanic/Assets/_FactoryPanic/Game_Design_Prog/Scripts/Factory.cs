@@ -165,6 +165,11 @@ public class Factory : MonoBehaviour
         }
     }
 
+    public void UpdateHUD()
+    {
+        ui.setCounter(choices[0], nRobotToCompletePhase2);
+    }
+
     void PauseCarpet()
     {
         SpeedChangement.Instance.Stop();
