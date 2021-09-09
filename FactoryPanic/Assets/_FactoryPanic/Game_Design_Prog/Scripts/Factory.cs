@@ -49,6 +49,12 @@ public class Factory : MonoBehaviour
     private NarrationManager narrationManager = default;
 
     [SerializeField]
+    private HUD ui = default;
+
+    [SerializeField]
+    private int nRobotToComplete = 10;
+
+    [SerializeField]
     private Animator conveyorAnimator = default;
 
     void Start()
@@ -183,7 +189,8 @@ public class Factory : MonoBehaviour
         {
             choices[0]++;
             SoundManager.Instance.PlayCompletedSound();
-            if (choices[0] == 10) narrationManager.Load2();
+            ui.setCounter(choices[0],nRobotToComplete);
+            if (choices[0] == nRobotToComplete) narrationManager.Load2();
         }
         else
         {

@@ -3,6 +3,7 @@
 ///   Date   : 07/09/2021 12:47
 ///-----------------------------------------------------------------
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         [SerializeField] private GameObject pauseScreen = default;
         [SerializeField] private Animator animatorPause = default;
+        [SerializeField] private TextMeshProUGUI counter = default;
         static public bool stopped = false;
 
         public void Pause()
@@ -25,7 +27,6 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         {
             stopped = false;
             animatorPause.SetBool("Open", false);
-            //pauseScreen.SetActive(false);
         }
 
         public void Quit()
@@ -37,6 +38,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("_FactoryPanic/Scenes/TitleCard", LoadSceneMode.Single);
+        }
+
+        public void setCounter(int i,int maxRobot)
+        {
+            counter.text = i + "/" + maxRobot;
         }
     }
 }
