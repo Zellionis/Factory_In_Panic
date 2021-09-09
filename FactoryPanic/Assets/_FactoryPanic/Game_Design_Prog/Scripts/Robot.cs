@@ -69,7 +69,7 @@ public class Robot : MonoBehaviour
 public enum ClassRobot
 {
     Artiste,
-    Boulanger,
+    Cuisto,
     Banquier,
     Sportif,
 

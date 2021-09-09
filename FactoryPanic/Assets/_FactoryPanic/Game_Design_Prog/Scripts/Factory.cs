@@ -14,6 +14,9 @@ public class Factory : MonoBehaviour
     [SerializeField] private float SpeedCarpet = 0.0f;
 
     [SerializeField]
+    Transform ExitCarpet = default;
+    
+    [SerializeField]
     Transform StartCarpet = default;
     
     [SerializeField]
@@ -46,6 +49,8 @@ public class Factory : MonoBehaviour
 
     [SerializeField]
     private NarrationManager narrationManager = default;
+
+    [SerializeField] private RobotGenerator Rg = default;
     
     void Start()
     {
@@ -80,6 +85,11 @@ public class Factory : MonoBehaviour
             else
                 MoveCarpet();
         }
+
+        if (ListRobots.Count <= 1)
+        {
+            CreateRobot();
+        }
     }
 
     void CreateRobot()
@@ -91,6 +101,7 @@ public class Factory : MonoBehaviour
             go.transform.position = Spawn.position;
             Robot rob = go.GetComponent<Robot>();
             rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
+            Rg.TypeRobot(go,ClassRobot.Artiste);
             ListRobots.Add(go);
         }
     }
@@ -120,6 +131,9 @@ public class Factory : MonoBehaviour
                         MovingAndDraging(EndCarpet, Quart2Carpet, i);
                     else if (rob.Imatricule == 3)
                         MovingAndDraging(Spawn, EndCarpet, i);
+                    else if(rob.Imatricule == -1)
+                        MovingAndDraging(StartCarpet,ExitCarpet, i);
+
 
                     if (TimeLerp == 1.0f)
                         StopCarpet = true;
@@ -156,7 +170,7 @@ public class Factory : MonoBehaviour
                     if (rob)
                     {
                         rob.Imatricule -= 1;
-                        if (rob.Imatricule == -1 && ListRobots.Count == 5)
+                        if (rob.Imatricule == -1 && ListRobots.Count >= 5)
                         {
                             ListRobots[4].GetComponent<Robot>().Imatricule = 3;
                             ListRobots.Remove(rob.gameObject);

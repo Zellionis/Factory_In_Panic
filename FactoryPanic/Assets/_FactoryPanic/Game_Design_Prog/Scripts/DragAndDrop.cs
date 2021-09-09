@@ -14,7 +14,7 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] private Texture2D cursor3;
 
     private Factory _factory = null;
-    private int imatricule = -2;
+    private int imatricule = -3;
     private bool isGood = false;
     
 
@@ -49,7 +49,7 @@ public class DragAndDrop : MonoBehaviour
         Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
         isDragging = false;
         transform.position = TempPos;
-        if (imatricule != -2)
+        if (imatricule != -3)
         {
             _factory.Sorter(isGood,imatricule);
         }

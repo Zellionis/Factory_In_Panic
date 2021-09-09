@@ -40,7 +40,7 @@ public class Cleaner : MonoBehaviour
                     if (rob)
                     {
                          if (Type == rob.GetPersonality())
-                              drag.HitCleaner(_factory, -2, true);
+                              drag.HitCleaner(_factory, -3, true);
                     }
                }
           }
