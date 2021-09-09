@@ -33,7 +33,7 @@ public class Robot : MonoBehaviour
     public void StopText()
     {
         robotText.gameObject.SetActive(false);
-        StopCoroutine(currentCoroutine);
+        if(currentCoroutine!=null)StopCoroutine(currentCoroutine);
         currentCoroutine = default;
     }
 

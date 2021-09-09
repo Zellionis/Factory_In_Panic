@@ -1,4 +1,5 @@
 using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
+using Com.IsartDigital.FactoryPanic.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,6 +52,15 @@ public class Factory : MonoBehaviour
     [SerializeField]
     private NarrationManager narrationManager = default;
 
+    [SerializeField]
+    private HUD ui = default;
+
+    [SerializeField]
+    private int nRobotToComplete = 10;
+
+    [SerializeField]
+    private Animator conveyorAnimator = default;
+
     [SerializeField] private RobotGenerator Rg = default;
     
     void Start()
@@ -79,7 +89,7 @@ public class Factory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!narrationManager.TextShowed)
+        if (!(narrationManager.TextShowed) &&!(HUD.stopped))
         {
             if (StopCarpet)
                 PauseCarpet();
@@ -118,6 +128,7 @@ public class Factory : MonoBehaviour
 
     void MoveCarpet()
     {
+        conveyorAnimator.speed = 1;
         if (ListRobots.Count > 0)
         {
             for (int i = 0; i < 4; i++)
@@ -132,11 +143,14 @@ public class Factory : MonoBehaviour
 
                     if (TimeLerp > 1.0)
                         TimeLerp = 1.0f;
-                    
+
                     if (rob.Imatricule == 0)
-                        MovingAndDraging(Quart1Carpet,StartCarpet, i);
+                        MovingAndDraging(Quart1Carpet, StartCarpet, i);
                     else if (rob.Imatricule == 1)
+                    {
+                        rob.StopText();
                         MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
+                    }
                     else if (rob.Imatricule == 2)
                         MovingAndDraging(EndCarpet, Quart2Carpet, i);
                     else if (rob.Imatricule == 3)
@@ -167,6 +181,7 @@ public class Factory : MonoBehaviour
 
     void PauseCarpet()
     {
+        conveyorAnimator.speed = 0;
         CurrentTimeStop += Time.deltaTime;
         if (timeStopCarpet <= CurrentTimeStop)
         {
@@ -198,9 +213,18 @@ public class Factory : MonoBehaviour
     public void Sorter(bool type, int imatricule)
     {
         if (type == true)
+        {
             choices[0]++;
-        else 
+            SoundManager.Instance.PlayCompletedSound();
+            ui.setCounter(choices[0],nRobotToComplete);
+            if (choices[0] == nRobotToComplete) narrationManager.Load2();
+        }
+        else
+        {
             choices[1]++;
+            SoundManager.Instance.PlayClickLost();
+            if (choices[0] == 0 && choices[1] == 1) narrationManager.Load7();
+        }
 
         for (int i = 0; i < 4; i++)
         {

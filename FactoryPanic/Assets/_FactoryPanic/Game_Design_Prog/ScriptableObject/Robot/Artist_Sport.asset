@@ -19,7 +19,7 @@ MonoBehaviour:
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "J\u2019aimerai peindre des sportifs "
+  - text: "J\u2019aimerais peindre des sportifs "
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

@@ -23,6 +23,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         private DialogueData currentLine = default;
 
         private bool textShowed = true;
+        public static bool textShowedStatic = true;
         public bool TextShowed
         {
             get
@@ -49,6 +50,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         public void Open()
         {
             textShowed = true;
+            textShowedStatic = true;
             for (int i = 0; i < listDialogueObject.Count; i++)
             {
                 listDialogueObject[i].SetActive(true);
@@ -58,6 +60,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         public void Close()
         {
             textShowed = false;
+            textShowedStatic = false;
             for (int i = 0; i < listDialogueObject.Count; i++)
             {
                 listDialogueObject[i].SetActive(false);
@@ -72,7 +75,15 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 {
                     StartText(managerBox.NextLine());
                 }
-                else Close();
+                else
+                {
+                    if (managerBox.CurrentChapter == 1) 
+                    {
+                        SoundManager.Instance.SpeedUpMusic();
+                        Load3(); 
+                    }
+                    else Close();
+                }
             }
             else
             {
@@ -80,6 +91,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 box.text = currentLine.text;
                 StopCoroutine(currentCoroutine);
                 currentCoroutine = default;
+                SoundManager.Instance.ChangeVolumeBgm(false);
             }
 
 
@@ -87,6 +99,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         private IEnumerator SlowText()
         {
+            SoundManager.Instance.ChangeVolumeBgm(true);
             foreach (char letter in currentLine.text.ToCharArray())
             {
                 if (!(letter.ToString() == " ")) SoundManager.Instance.PlayVoiceManager();
@@ -95,6 +108,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
             }
             IsDisplaying = false;
+            SoundManager.Instance.ChangeVolumeBgm(false);
         }
 
         public void ShowNextPunchline()
@@ -128,6 +142,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         {
             Open();
             StartText(managerBox.LoadBlock(2));
+            ScreenShake.Instance.TriggerScreenShake();
         }
         public void Load4()
         {

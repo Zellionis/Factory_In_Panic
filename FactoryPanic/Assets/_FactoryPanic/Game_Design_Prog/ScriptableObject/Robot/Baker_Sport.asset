@@ -15,7 +15,7 @@ MonoBehaviour:
   personality: 1
   body: 3
   lines:
-  - text: "Humain, quel gout \xE0 la sueur, sal\xE9 ?"
+  - text: "Humain, quel go\xFBt a la sueur, sal\xE9 ?"
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

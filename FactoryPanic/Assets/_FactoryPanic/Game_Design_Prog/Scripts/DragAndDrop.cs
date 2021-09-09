@@ -1,3 +1,5 @@
+using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
+using Com.IsartDigital.FactoryPanic.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ public class DragAndDrop : MonoBehaviour
     private Factory _factory = null;
     private int imatricule = -3;
     private bool isGood = false;
+    private Cleaner triggeredVaccum = default;
     
 
 
@@ -38,10 +41,13 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
-        isDragging = true;
-        TempPos = transform.position;   
-      
+        if (!NarrationManager.textShowedStatic) {
+            SoundManager.Instance.PlayGrab();
+            Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
+            isDragging = true;
+            TempPos = transform.position;
+            gameObject.GetComponent<Robot>().StopText();
+        }
     }
 
     private void OnMouseUp()
@@ -51,8 +57,16 @@ public class DragAndDrop : MonoBehaviour
         transform.position = TempPos;
         if (imatricule != -3)
         {
+            if (isGood) triggeredVaccum?.PlayYesParticle();
+            else triggeredVaccum?.PlayNoParticle();
+
             _factory.Sorter(isGood,imatricule);
         }
+    }
+
+    private void Start()
+    {
+        Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     void Update()
@@ -74,10 +88,12 @@ public class DragAndDrop : MonoBehaviour
         TempPos = vec2;
     }
 
-    public void HitCleaner(Factory fact, int index,bool choices)
+    public void HitCleaner(Factory fact, int index,bool choices,Cleaner vaccum)
     {
         _factory = fact;
         imatricule = index;
         isGood = choices;
+        triggeredVaccum = vaccum;
     }
+
 }

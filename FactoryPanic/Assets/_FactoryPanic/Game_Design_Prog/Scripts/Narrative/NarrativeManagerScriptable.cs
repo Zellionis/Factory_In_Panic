@@ -25,6 +25,13 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 return managerDialogueBlock[currentBlockIndex].CurrentLine;
             }
         }
+        public int CurrentChapter
+        {
+            get
+            {
+                return currentBlockIndex;
+            }
+        }
 
         public DialogueData GetRandomPunchline
         {
@@ -66,8 +73,10 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         /*public DialogueData PreviousChapter()
         {
-
-        }*/
+            managerDialogueBlock[currentBlockIndex].ResetIndex();
+            if (oldChapter < managerDialogueBlock.Count) currentBlockIndex = oldChapter;
+            return managerDialogueBlock[currentBlockIndex].lines[0];
+        }
 
         public DialogueData LoadBlock()
         {

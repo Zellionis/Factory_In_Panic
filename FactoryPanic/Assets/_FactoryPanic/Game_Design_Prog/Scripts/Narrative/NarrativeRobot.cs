@@ -22,5 +22,10 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             int randomInt = UnityEngine.Random.Range(0, lines.Count);
             return lines[randomInt];
         }
+        public DialogueData GetLineAt(int i)
+        {
+           
+            return lines[i];
+        }
     }
 }

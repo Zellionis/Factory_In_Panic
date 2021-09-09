@@ -14,6 +14,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             SceneManager.LoadScene("_FactoryPanic/Scenes/Narration_test", LoadSceneMode.Single);
         }
 
+        public void Close()
+        {
+            GetComponent<Animator>().SetTrigger("Close");
+        }
+
         public void Quit()
         {
             Application.Quit();
