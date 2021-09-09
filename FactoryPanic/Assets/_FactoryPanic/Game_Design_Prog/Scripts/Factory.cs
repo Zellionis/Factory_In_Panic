@@ -209,10 +209,13 @@ public class Factory : MonoBehaviour
                     {
                         Robot NextRob = ListRobots[i + 1].GetComponent<Robot>();
 
-                        if (rob.Imatricule - NextRob.Imatricule != 1 && i != 0)
+
+                        if (rob.Imatricule - NextRob.Imatricule != 1)
                         {
-                            RobotSpawn = false;
+                                RobotSpawn = false;
+                                
                         }
+                        
                     }
 
                     if (rob.Imatricule == 0)
@@ -223,10 +226,13 @@ public class Factory : MonoBehaviour
                             if (LastRob.Imatricule > 4)
                             {
                                 CreateRobot(LastRob.Imatricule + 1);
+                                Debug.Log("pause < 4");
                             }
                             else
                             {
                                 CreateRobot(4);
+                                Debug.Log("pause = 4");
+
                             }
                         }
                         else
@@ -303,11 +309,15 @@ public class Factory : MonoBehaviour
                     Robot LastRob = ListRobots[ListRobots.Count-1].GetComponent<Robot>();
                     if (LastRob.Imatricule < 4)
                     {
-                        CreateRobot(4);                    
+                        CreateRobot(4);       
+                        Debug.Log("sorter < 4");
+
                     }
                     else
                     {
                         CreateRobot(1 + LastRob.Imatricule);
+                        Debug.Log("sorter = 4");
+
                     }
                     ListRobots.Remove(rob.gameObject);
                     Destroy(rob.gameObject);
