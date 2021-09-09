@@ -58,9 +58,6 @@ public class Factory : MonoBehaviour
     [SerializeField]
     private int nRobotToCompletePhase2 = 15;
 
-    [SerializeField]
-    private Animator conveyorAnimator = default;
-
     [SerializeField] private RobotGenerator Rg = default;
 
     private bool phaseTwo = false;
@@ -76,7 +73,7 @@ public class Factory : MonoBehaviour
         ListRobots[1].transform.position = Quart2Carpet.position;
         ListRobots[2].transform.position = EndCarpet.position;
         ListRobots[3].transform.position = Spawn.position;
-        
+        SpeedChangement.Instance.Stop();
     }
 
     // Update is called once per frame
@@ -117,7 +114,7 @@ public class Factory : MonoBehaviour
 
     void MoveCarpet()
     {
-        conveyorAnimator.speed = 1;
+        SpeedChangement.Instance.Play();
         if (ListRobots.Count > 0)
         {
             for (int i = 0; i < ListRobots.Count; i++)
@@ -170,7 +167,7 @@ public class Factory : MonoBehaviour
 
     void PauseCarpet()
     {
-        conveyorAnimator.speed = 0;
+        SpeedChangement.Instance.Stop();
         CurrentTimeStop += Time.deltaTime;
         if (timeStopCarpet <= CurrentTimeStop)
         {
