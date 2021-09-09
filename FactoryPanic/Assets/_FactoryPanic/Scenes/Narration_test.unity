@@ -771,6 +771,12 @@ MonoBehaviour:
   lockX: 0
   lockY: 0
   soundEffect: {fileID: 198634727}
+--- !u!95 &1940311359 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2352498352512091517, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2352498353910712386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1948547835 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7374249278314203500, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
@@ -1167,9 +1173,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 198634727, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
+      propertyPath: m_Volume
+      value: 0.093
+      objectReference: {fileID: 0}
+    - target: {fileID: 778527246, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
+      propertyPath: m_Volume
+      value: 0.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217772683, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
+      propertyPath: m_Volume
+      value: 0.496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703977010, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
+      propertyPath: m_Volume
+      value: 0.333
+      objectReference: {fileID: 0}
     - target: {fileID: 1875499115, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
       propertyPath: m_Volume
       value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020672477463104791, guid: be8a08c70b14c484ba0d1b6bf333515b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.352
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935347242069709206, guid: be8a08c70b14c484ba0d1b6bf333515b,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1935347242276257213, guid: be8a08c70b14c484ba0d1b6bf333515b,
         type: 3}
@@ -1184,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 1935347242276257214, guid: be8a08c70b14c484ba0d1b6bf333515b,
         type: 3}
       propertyPath: soundReductionMultiplier
-      value: 4.28
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 1935347242276257215, guid: be8a08c70b14c484ba0d1b6bf333515b,
         type: 3}
@@ -1250,6 +1282,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2352498352512091394, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2352498352512091395, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1304,6 +1341,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352498352512091395, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352498352512091395, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352498352512091395, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74483204
       objectReference: {fileID: 0}
     - target: {fileID: 2352498352512091516, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
         type: 3}
@@ -1422,6 +1474,10 @@ PrefabInstance:
       propertyPath: NumRob
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
+      propertyPath: conveyorAnimator
+      value: 
+      objectReference: {fileID: 1940311359}
     - target: {fileID: 7308158491170131657, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
         type: 3}
       propertyPath: m_Name

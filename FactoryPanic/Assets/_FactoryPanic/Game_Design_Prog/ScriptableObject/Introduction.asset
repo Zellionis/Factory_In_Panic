@@ -34,7 +34,7 @@ MonoBehaviour:
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
-  - text: Ne te pose pas trop de question et fit toi aux apparences !
+  - text: Ne te pose pas trop de questions et fis toi aux apparences !
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1

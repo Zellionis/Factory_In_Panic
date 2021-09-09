@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: SucceedStreak
   m_EditorClassIdentifier: 
   lines:
-  - text: "Tu es tr\xE8s efficace ! Visiblement, les humains sont dou\xE9s pour juger
-      les apparences. "
+  - text: "Continue comme \xE7a !"
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 1

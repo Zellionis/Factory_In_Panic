@@ -19,7 +19,7 @@ MonoBehaviour:
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "J\u2019aimerai bien \xEAtre le banquier de M botP."
+  - text: "J\u2019aimerai biens \xEAtre le banquier de M-botPe."
     speed: 0
     sprite: {fileID: 0}
     lastLine: 0

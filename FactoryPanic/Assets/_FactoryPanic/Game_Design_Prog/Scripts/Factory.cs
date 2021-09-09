@@ -47,7 +47,10 @@ public class Factory : MonoBehaviour
 
     [SerializeField]
     private NarrationManager narrationManager = default;
-    
+
+    [SerializeField]
+    private Animator conveyorAnimator = default;
+
     void Start()
     {
         CreateRobot();
@@ -98,6 +101,7 @@ public class Factory : MonoBehaviour
 
     void MoveCarpet()
     {
+        conveyorAnimator.speed = 1;
         if (ListRobots.Count > 0)
         {
             for (int i = 0; i < 4; i++)
@@ -144,6 +148,7 @@ public class Factory : MonoBehaviour
 
     void PauseCarpet()
     {
+        conveyorAnimator.speed = 0;
         CurrentTimeStop += Time.deltaTime;
         if (timeStopCarpet <= CurrentTimeStop)
         {
@@ -184,7 +189,7 @@ public class Factory : MonoBehaviour
         {
             choices[1]++;
             SoundManager.Instance.PlayClickLost();
-            if (choices[0] == 0 && choices[1] == 1) narrationManager.Load6();
+            if (choices[0] == 0 && choices[1] == 1) narrationManager.Load7();
         }
 
         for (int i = 0; i < 4; i++)
