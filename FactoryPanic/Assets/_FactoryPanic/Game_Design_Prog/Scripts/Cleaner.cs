@@ -10,6 +10,7 @@ public class Cleaner : MonoBehaviour
      [SerializeField] private Factory _factory=default;
      [SerializeField] private Animator _animator=default;
      [SerializeField] private Animator _animatorPanel=default;
+     [SerializeField] private Animator _animatorTube=default;
      [SerializeField] private List<ParticleSystem> yesEffect=default;
      [SerializeField] private List<ParticleSystem> noEffect =default;
 
@@ -40,6 +41,7 @@ public class Cleaner : MonoBehaviour
 
     public void PlayYesParticle()
     {
+        _animatorTube.SetTrigger("Triggered");
         _animator.SetTrigger("True");
         _animatorPanel.SetTrigger("True");
         for (int i = 0; i < yesEffect.Count; i++)

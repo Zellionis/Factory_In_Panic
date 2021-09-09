@@ -13,6 +13,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         [SerializeField] private GameObject pauseScreen = default;
         [SerializeField] private Animator animatorPause = default;
+        [SerializeField] private Animator blackScreen = default;
         [SerializeField] private TextMeshProUGUI counter = default;
         static public bool stopped = false;
 
@@ -21,6 +22,16 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             pauseScreen.SetActive(true);
             stopped = true;
             animatorPause.SetBool("Open", true);
+        }
+
+        public void Show()
+        {
+            blackScreen.SetTrigger("Show");
+        }
+
+        public void Hide()
+        {
+            blackScreen.SetTrigger("Hide");
         }
 
         public void Continue()

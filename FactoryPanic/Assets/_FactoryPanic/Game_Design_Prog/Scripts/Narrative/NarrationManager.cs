@@ -17,6 +17,9 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] private TextMeshProUGUI box = default;
         [SerializeField] private NarrativeManagerScriptable managerBox = default;
         [SerializeField] private List<GameObject> listDialogueObject = default;
+        [SerializeField] private Animator face = default;
+        [SerializeField] private HUD blackscreen = default;
+        [SerializeField] private Factory factory = default;
 
         private bool IsDisplaying = false;
         private Coroutine currentCoroutine = default;
@@ -24,6 +27,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         private bool textShowed = true;
         public static bool textShowedStatic = true;
+
+        private int previousInt = 5;
+
+        private Face currentExpression = Face.Panic;
+
         public bool TextShowed
         {
             get
@@ -65,6 +73,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             {
                 listDialogueObject[i].SetActive(false);
             }
+            if (currentExpression != Face.Neutral) face.SetTrigger("Neutral");
         }
 
         public void ShowNextText()
@@ -80,7 +89,13 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                     if (managerBox.CurrentChapter == 1) 
                     {
                         SoundManager.Instance.SpeedUpMusic();
+                        factory.UpdateHUD();
                         Load3(); 
+                    }
+                    else if (managerBox.CurrentChapter == 5)
+                    {
+                        blackscreen.Hide();
+                        Close();
                     }
                     else Close();
                 }
@@ -92,6 +107,8 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 StopCoroutine(currentCoroutine);
                 currentCoroutine = default;
                 SoundManager.Instance.ChangeVolumeBgm(false);
+                face.SetInteger("ID", 5);
+                currentExpression = currentLine.expression;
             }
 
 
@@ -100,15 +117,37 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         private IEnumerator SlowText()
         {
             SoundManager.Instance.ChangeVolumeBgm(true);
+            if(currentLine.expression!=currentExpression)face.SetTrigger(currentLine.expression.ToString());
+            currentExpression = currentLine.expression;
             foreach (char letter in currentLine.text.ToCharArray())
             {
-                if (!(letter.ToString() == " ")) SoundManager.Instance.PlayVoiceManager();
+                if (!(letter.ToString() == " "))
+                {
+                    SoundManager.Instance.PlayVoiceManager();
+                    face.SetInteger("ID", RandomInt());
+                }
+                else
+                {
+                    face.SetInteger("ID", 5);
+                }
                 box.text += letter;
                 yield return new WaitForSeconds(currentLine.speed);
 
             }
+            face.SetInteger("ID", 5);
             IsDisplaying = false;
             SoundManager.Instance.ChangeVolumeBgm(false);
+        }
+
+        public int RandomInt()
+        {
+            int random = Random.Range(0, 4);
+            while (random == previousInt)
+            {
+                random = Random.Range(0, 4);
+            }
+            previousInt = random;
+            return previousInt;
         }
 
         public void ShowNextPunchline()
@@ -169,5 +208,12 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             Open();
             StartText(managerBox.LoadBlock(7));
         }
+    }
+
+    public enum  Face
+    {
+        Happy,
+        Panic,
+        Neutral,
     }
 }

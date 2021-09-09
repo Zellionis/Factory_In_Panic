@@ -15,10 +15,10 @@ MonoBehaviour:
   lines:
   - text: "Tu t\u2019es tromp\xE9e beaucoup de fois. "
     speed: 0.03
-    sprite: {fileID: 0}
+    expression: 1
     lastLine: 0
   - text: "Les humains sont pleins de ressource, je suis s\xFBr que tu vas trouver
       une solution."
     speed: 0.03
-    sprite: {fileID: 0}
+    expression: 1
     lastLine: 1
