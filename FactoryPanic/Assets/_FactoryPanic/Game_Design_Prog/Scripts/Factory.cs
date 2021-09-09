@@ -10,8 +10,6 @@ public class Factory : MonoBehaviour
 {
     // Start is called before the first frame update
     private int countGoodRob = 0;
-    
-    [SerializeField] private int NumRob = 0;
 
     [SerializeField] private float SpeedCarpet = 0.0f;
 
@@ -65,25 +63,14 @@ public class Factory : MonoBehaviour
     
     void Start()
     {
-        CreateRobot();
-        for (int i = 0; i < 3; i++)
-        {
-            if (i < ListRobots.Count)
-            {
-                Robot rob = ListRobots[i].GetComponent<Robot>();
-                if (rob)
-                {
-                    rob.Imatricule = i+1;
-                }
-            }
-        }
+        for(int i = 0; i <4; i++)
+            CreateRobot(i);
+
+        ListRobots[0].transform.position = Quart1Carpet.position;
+        ListRobots[1].transform.position = Quart2Carpet.position;
+        ListRobots[2].transform.position = EndCarpet.position;
+        ListRobots[3].transform.position = Spawn.position;
         
-        if(ListRobots.Count == 1)
-            ListRobots[0].transform.position = Quart1Carpet.position;
-        if(ListRobots.Count == 2)
-            ListRobots[1].transform.position = Quart2Carpet.position;
-        if(ListRobots.Count == 3)
-            ListRobots[2].transform.position = EndCarpet.position;
     }
 
     // Update is called once per frame
@@ -96,34 +83,30 @@ public class Factory : MonoBehaviour
             else
                 MoveCarpet();
         }
-
-        if (ListRobots.Count <= 1)
-        {
-            CreateRobot();
-        }
+        
     }
 
-    void CreateRobot()
+    void CreateRobot(int num)
     {
-        for (int i = 0; i < NumRob; i++)
-        {
-            GameObject go = Instantiate(ListType[0]);
-            go.tag = "Robot";
-            go.transform.position = Spawn.position;
-            Robot rob = go.GetComponent<Robot>();
-            int rand = UnityEngine.Random.Range(0, 4);
-            if(rand == 0)
-                rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
-            else if(rand == 1)
-                rob.SetClassRobot(ClassRobot.Banquier, ClassRobot.Banquier);
-            else if(rand == 2)
-                rob.SetClassRobot(ClassRobot.Cuisto, ClassRobot.Cuisto);
-            else if(rand == 3)
-                rob.SetClassRobot(ClassRobot.Sportif, ClassRobot.Sportif);
-            
-            Rg.TypeRobot(go,rob.GetPersonality());
-            ListRobots.Add(go);
-        }
+        
+        GameObject go = Instantiate(ListType[0]);
+        go.tag = "Robot";
+        go.transform.position = Spawn.position;
+        Robot rob = go.GetComponent<Robot>();
+        int rand = UnityEngine.Random.Range(0, 4);
+        if(rand == 0)
+            rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
+        else if(rand == 1)
+            rob.SetClassRobot(ClassRobot.Banquier, ClassRobot.Banquier);
+        else if(rand == 2)
+            rob.SetClassRobot(ClassRobot.Cuisto, ClassRobot.Cuisto);
+        else if(rand == 3)
+            rob.SetClassRobot(ClassRobot.Sportif, ClassRobot.Sportif);
+
+        rob.Imatricule = num;
+        Rg.TypeRobot(go,rob.GetPersonality());
+        ListRobots.Add(go);
+        
     }
 
     void MoveCarpet()
@@ -131,7 +114,7 @@ public class Factory : MonoBehaviour
         conveyorAnimator.speed = 1;
         if (ListRobots.Count > 0)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < ListRobots.Count; i++)
             {
                 if (i >= ListRobots.Count)
                     break;
@@ -187,7 +170,7 @@ public class Factory : MonoBehaviour
         {
             CurrentTimeStop = 0;
             StopCarpet = false;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < ListRobots.Count; i++)
             {
                 if (i < ListRobots.Count)
                 {
@@ -195,13 +178,20 @@ public class Factory : MonoBehaviour
                     if (rob)
                     {
                         rob.Imatricule -= 1;
-                        if (rob.Imatricule == -1 && ListRobots.Count >= 5)
-                        {
-                            ListRobots[4].GetComponent<Robot>().Imatricule = 3;
-                            ListRobots.Remove(rob.gameObject);
-                            Destroy(rob.gameObject);
-                        }
                     }
+
+                    if (rob.Imatricule == 0)
+                    {
+                        CreateRobot(4);
+                    }
+
+                    if (rob.Imatricule == -2)
+                    {
+                        ListRobots.Remove(rob.gameObject);
+                        Destroy(rob.gameObject);
+                        i--;
+                    }
+                    
                 }
             } 
                 
