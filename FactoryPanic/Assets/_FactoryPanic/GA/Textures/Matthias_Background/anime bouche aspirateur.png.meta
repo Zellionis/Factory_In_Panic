@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: a6b784fbca0fe4641921e18f734bd7f6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8519190290367476562
+    second: anime bouche aspirateur_0
+  - first:
+      213: 3059500553518136180
+    second: anime bouche aspirateur_1
+  - first:
+      213: -80771815349647808
+    second: anime bouche aspirateur_2
+  - first:
+      213: 1671365560415007620
+    second: anime bouche aspirateur_3
+  - first:
+      213: -5618128262262473370
+    second: anime bouche aspirateur_4
+  - first:
+      213: -8665550376535993713
+    second: anime bouche aspirateur_5
+  - first:
+      213: -622639885073535015
+    second: anime bouche aspirateur_6
+  - first:
+      213: 6843952455205017202
+    second: anime bouche aspirateur_7
+  - first:
+      213: 7321771560005209169
+    second: anime bouche aspirateur_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +98,150 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: anime bouche aspirateur_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3872
+        width: 620
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2537f47be6e3a3670800000000000000
+      internalID: 8519190290367476562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime bouche aspirateur_1
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 3854
+        width: 575
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b3f822b87857a20800000000000000
+      internalID: 3059500553518136180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime bouche aspirateur_2
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 3830
+        width: 615
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046883e367a01eef0800000000000000
+      internalID: -80771815349647808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime bouche aspirateur_3
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 3855
+        width: 592
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483bb563f12e13710800000000000000
+      internalID: 1671365560415007620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime bouche aspirateur_8
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 3869
+        width: 597
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c0ba001782c9560800000000000000
+      internalID: 7321771560005209169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
