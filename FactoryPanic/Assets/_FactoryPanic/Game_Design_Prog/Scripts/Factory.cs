@@ -3,6 +3,7 @@ using Com.IsartDigital.FactoryPanic.Sound;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using Random = System.Random;
 
@@ -99,18 +100,23 @@ public class Factory : MonoBehaviour
         go.tag = "Robot";
         go.transform.position = Spawn.position;
         Robot rob = go.GetComponent<Robot>();
-        int rand = UnityEngine.Random.Range(0, 4);
-        if(rand == 0)
-            rob.SetClassRobot(ClassRobot.Artiste, ClassRobot.Artiste);
-        else if(rand == 1)
-            rob.SetClassRobot(ClassRobot.Banquier, ClassRobot.Banquier);
-        else if(rand == 2)
-            rob.SetClassRobot(ClassRobot.Cuisto, ClassRobot.Cuisto);
-        else if(rand == 3)
-            rob.SetClassRobot(ClassRobot.Sportif, ClassRobot.Sportif);
+        int randPerso = UnityEngine.Random.Range(0, 4);
+        int randBody = UnityEngine.Random.Range(0, 4);
 
+        while(randPerso == randBody)
+            randBody = UnityEngine.Random.Range(0, 4);
+        
+        
+        ClassRobot personality = default;
+        ClassRobot body = default;
+        
+        SelectType(randPerso, ref personality);
+        SelectType(randBody, ref body);
+
+        rob.SetClassRobot(body, personality);
         rob.Imatricule = num;
-        Rg.TypeRobot(go,rob.GetPersonality());
+        //Rg.TypeRobot(go,rob.GetPersonality());
+        Rg.RandomRobot(go,rob.GetPersonality(), rob.GetBody());
         ListRobots.Add(go);
         
     }
@@ -162,9 +168,11 @@ public class Factory : MonoBehaviour
         {
             if (drag.IsDragging())
                 drag.SetTempPos(Vector2.Lerp(start.position, end.position, TimeLerp));
-                
+
             else
+            {
                 ListRobots[index].transform.position = Vector2.Lerp(start.position, end.position, TimeLerp);
+            }
         }
     }
 
@@ -190,7 +198,7 @@ public class Factory : MonoBehaviour
                     {
                         Robot NextRob = ListRobots[i + 1].GetComponent<Robot>();
 
-                        if (rob.Imatricule - NextRob.Imatricule != 1)
+                        if (rob.Imatricule - NextRob.Imatricule != 1 && i != 0)
                         {
                             RobotSpawn = false;
                         }
@@ -204,7 +212,6 @@ public class Factory : MonoBehaviour
                             if (LastRob.Imatricule > 4)
                             {
                                 CreateRobot(LastRob.Imatricule + 1);
-
                             }
                             else
                             {
@@ -283,8 +290,10 @@ public class Factory : MonoBehaviour
                 {
                     
                     Robot LastRob = ListRobots[ListRobots.Count-1].GetComponent<Robot>();
-                    if(LastRob.Imatricule < 4)
-                        CreateRobot(4);
+                    if (LastRob.Imatricule < 4)
+                    {
+                        CreateRobot(4);                    
+                    }
                     else
                     {
                         CreateRobot(1 + LastRob.Imatricule);
@@ -299,6 +308,18 @@ public class Factory : MonoBehaviour
             }
         }
             
+    }
+
+    void SelectType(int rand, ref ClassRobot cR)
+    {
+        if(rand == 0)
+            cR = ClassRobot.Artiste;
+        else if(rand == 1)
+            cR = ClassRobot.Banquier;
+        else if(rand == 2)
+            cR = ClassRobot.Cuisto;
+        else if(rand == 3)
+            cR = ClassRobot.Sportif;
     }
 }
 

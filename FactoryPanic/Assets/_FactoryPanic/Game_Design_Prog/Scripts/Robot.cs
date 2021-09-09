@@ -65,6 +65,10 @@ public class Robot : MonoBehaviour
         return personality;
     }
     
+    public ClassRobot GetBody()
+    {
+        return body;
+    }
 }
 public enum ClassRobot
 {
