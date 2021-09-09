@@ -61,6 +61,17 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 0
+--- !u!210 &4007375844480283794
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467473808673756565}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!50 &356221574118577589
 Rigidbody2D:
   serializedVersion: 4
@@ -967,6 +978,12 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -3204757094200845890, guid: 52947e4d278b2f540aa530411f0cf78d,
     type: 3}
+--- !u!1 &2467473808673756565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6790078043369761137, guid: 52947e4d278b2f540aa530411f0cf78d,
+    type: 3}
+  m_PrefabInstance: {fileID: 286807219969737498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1481910856555011418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1687231066430103104, guid: 52947e4d278b2f540aa530411f0cf78d,
@@ -985,15 +1002,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 286807219969737498}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5494976730685667399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3478778250998695075, guid: 52947e4d278b2f540aa530411f0cf78d,
-    type: 3}
-  m_PrefabInstance: {fileID: 286807219969737498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5652916753908289481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3636163619862967085, guid: 52947e4d278b2f540aa530411f0cf78d,
+    type: 3}
+  m_PrefabInstance: {fileID: 286807219969737498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5494976730685667399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3478778250998695075, guid: 52947e4d278b2f540aa530411f0cf78d,
     type: 3}
   m_PrefabInstance: {fileID: 286807219969737498}
   m_PrefabAsset: {fileID: 0}
