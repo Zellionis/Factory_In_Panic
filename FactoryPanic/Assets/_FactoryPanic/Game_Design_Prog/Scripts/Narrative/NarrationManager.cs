@@ -74,7 +74,11 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 }
                 else
                 {
-                    if (managerBox.CurrentChapter == 1) Load3();
+                    if (managerBox.CurrentChapter == 1) 
+                    {
+                        SoundManager.Instance.SpeedUpMusic();
+                        Load3(); 
+                    }
                     else Close();
                 }
             }
@@ -84,6 +88,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 box.text = currentLine.text;
                 StopCoroutine(currentCoroutine);
                 currentCoroutine = default;
+                SoundManager.Instance.ChangeVolumeBgm(true);
             }
 
 
@@ -91,6 +96,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
         private IEnumerator SlowText()
         {
+            SoundManager.Instance.ChangeVolumeBgm(true);
             foreach (char letter in currentLine.text.ToCharArray())
             {
                 if (!(letter.ToString() == " ")) SoundManager.Instance.PlayVoiceManager();
@@ -99,6 +105,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
 
             }
             IsDisplaying = false;
+            SoundManager.Instance.ChangeVolumeBgm(false);
         }
 
         public void ShowNextPunchline()
