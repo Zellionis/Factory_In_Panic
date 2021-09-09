@@ -56,7 +56,8 @@ public class Factory : MonoBehaviour
     private HUD ui = default;
 
     [SerializeField]
-    private int nRobotToCompletePhase1 = 10;
+    private int nRobotToCompletePhase1 = 6;
+    [SerializeField]
     private int nRobotToCompletePhase2 = 15;
 
     [SerializeField]
@@ -250,7 +251,7 @@ public class Factory : MonoBehaviour
             choices[1]++;
             SoundManager.Instance.PlayClickLost();
             if (choices[0] == 0 && choices[1] == 1 && !phaseTwo) narrationManager.Load7();
-            if (choices[0] == 4 && phaseTwo) narrationManager.Load8();
+            if (choices[1] == 4 && phaseTwo) narrationManager.Load8();
         }
 
         for (int i = 0; i < 4; i++)
