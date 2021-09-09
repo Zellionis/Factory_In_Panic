@@ -71,7 +71,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             return managerDialogueBlock[currentBlockIndex].lines[0];
         }
 
-        /*public DialogueData PreviousChapter()
+        public DialogueData PreviousChapter()
         {
             managerDialogueBlock[currentBlockIndex].ResetIndex();
             if (oldChapter < managerDialogueBlock.Count) currentBlockIndex = oldChapter;

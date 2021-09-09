@@ -771,6 +771,18 @@ MonoBehaviour:
   lockX: 0
   lockY: 0
   soundEffect: {fileID: 198634727}
+--- !u!114 &1715555201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2419666124023502422, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7308158491493271938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53741eb21051c6644a892c804a892079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1939263125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1767114930549435400, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
@@ -1514,6 +1526,14 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1939263125}
+    - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
+      propertyPath: ExitCarpet
+      value: 
+      objectReference: {fileID: 2083395219}
+    - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
+      propertyPath: Rg
+      value: 
+      objectReference: {fileID: 1715555201}
     - target: {fileID: 7308158491170131657, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
         type: 3}
       propertyPath: m_Name
