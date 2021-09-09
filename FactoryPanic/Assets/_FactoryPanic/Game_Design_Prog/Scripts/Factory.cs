@@ -140,7 +140,7 @@ public class Factory : MonoBehaviour
                         MovingAndDraging(Quart1Carpet, StartCarpet, i);
                     else if (rob.Imatricule == 1)
                     {
-                        rob.StopText();
+                        rob.StartText();
                         MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
                     }
                     else if (rob.Imatricule == 2)
