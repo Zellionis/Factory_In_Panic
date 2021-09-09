@@ -1076,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 1687112143}
     - target: {fileID: 1565562589110459, guid: 0bc3e6010b44cf342ad7aa6d686bd68d, type: 3}
       propertyPath: m_PlaneDistance
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1369659286131261384, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
         type: 3}
@@ -1516,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 340463540}
     - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
       propertyPath: NumRob
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
       propertyPath: conveyorAnimator

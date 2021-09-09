@@ -164,5 +164,10 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             Open();
             StartText(managerBox.LoadBlock(6));
         }
+        public void Load8()
+        {
+            Open();
+            StartText(managerBox.LoadBlock(7));
+        }
     }
 }

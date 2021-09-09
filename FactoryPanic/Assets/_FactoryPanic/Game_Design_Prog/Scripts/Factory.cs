@@ -54,12 +54,16 @@ public class Factory : MonoBehaviour
     private HUD ui = default;
 
     [SerializeField]
-    private int nRobotToComplete = 10;
+    private int nRobotToCompletePhase1 = 6;
+    [SerializeField]
+    private int nRobotToCompletePhase2 = 15;
 
     [SerializeField]
     private Animator conveyorAnimator = default;
 
     [SerializeField] private RobotGenerator Rg = default;
+
+    private bool phaseTwo = false;
     
     void Start()
     {
@@ -206,14 +210,38 @@ public class Factory : MonoBehaviour
         {
             choices[0]++;
             SoundManager.Instance.PlayCompletedSound();
-            ui.setCounter(choices[0],nRobotToComplete);
-            if (choices[0] == nRobotToComplete) narrationManager.Load2();
+            if (!phaseTwo)
+            {
+                ui.setCounter(choices[0], nRobotToCompletePhase1);
+                if (choices[0] == nRobotToCompletePhase1) {
+                    choices[0] = 0;
+                    choices[1] = 0;
+                    narrationManager.Load2();
+                    phaseTwo = true;
+                }
+            }
+            else
+            {
+                ui.setCounter(choices[0], nRobotToCompletePhase2);
+                if(choices[0]== Mathf.RoundToInt(nRobotToCompletePhase2 / 2)){
+                    narrationManager.Load4();
+                }
+                if (choices[0] == Mathf.RoundToInt((nRobotToCompletePhase2 / 4)*3))
+                {
+                    narrationManager.Load5();
+                }
+                if (choices[0] == nRobotToCompletePhase2)
+                {
+                    narrationManager.Load6();
+                }
+            }
         }
         else
         {
             choices[1]++;
             SoundManager.Instance.PlayClickLost();
-            if (choices[0] == 0 && choices[1] == 1) narrationManager.Load7();
+            if (choices[0] == 0 && choices[1] == 1 && !phaseTwo) narrationManager.Load7();
+            if (choices[1] == 4 && phaseTwo) narrationManager.Load8();
         }
 
         for (int i = 0; i < 4; i++)

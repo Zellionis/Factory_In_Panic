@@ -21,4 +21,4 @@ MonoBehaviour:
       une solution."
     speed: 0.03
     sprite: {fileID: 0}
-    lastLine: 0
+    lastLine: 1
