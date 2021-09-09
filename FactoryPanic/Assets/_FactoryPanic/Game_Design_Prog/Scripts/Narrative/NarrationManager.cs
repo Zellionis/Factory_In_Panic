@@ -100,6 +100,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
                 currentCoroutine = default;
                 SoundManager.Instance.ChangeVolumeBgm(false);
                 face.SetInteger("ID", 5);
+                currentExpression = currentLine.expression;
             }
 
 
