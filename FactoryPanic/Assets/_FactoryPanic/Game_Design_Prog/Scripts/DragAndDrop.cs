@@ -52,15 +52,18 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
-        isDragging = false;
-        transform.position = TempPos;
-        if (imatricule != -3)
+        if (!NarrationManager.textShowedStatic)
         {
-            if (isGood) triggeredVaccum?.PlayYesParticle();
-            else triggeredVaccum?.PlayNoParticle();
+            Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.ForceSoftware);
+            isDragging = false;
+            transform.position = TempPos;
+            if (imatricule != -3)
+            {
+                if (isGood) triggeredVaccum?.PlayYesParticle();
+                else triggeredVaccum?.PlayNoParticle();
 
-            _factory.Sorter(isGood,imatricule);
+                _factory.Sorter(isGood, imatricule);
+            }
         }
     }
 
@@ -71,10 +74,12 @@ public class DragAndDrop : MonoBehaviour
 
     void Update()
     {
-        if (isDragging)
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            transform.Translate(mousePos);
+        if (!NarrationManager.textShowedStatic) { 
+            if (isDragging)
+            {
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                transform.Translate(mousePos);
+            }
         }
     }
 
