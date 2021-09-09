@@ -64,6 +64,8 @@ public class Factory : MonoBehaviour
     [SerializeField] private RobotGenerator Rg = default;
 
     private bool phaseTwo = false;
+
+    private bool RobotSpawn = false;
     
     void Start()
     {
@@ -184,10 +186,38 @@ public class Factory : MonoBehaviour
                         rob.Imatricule -= 1;
                     }
 
+                    if (i+1 < ListRobots.Count)
+                    {
+                        Robot NextRob = ListRobots[i + 1].GetComponent<Robot>();
+
+                        if (rob.Imatricule - NextRob.Imatricule != 1)
+                        {
+                            RobotSpawn = false;
+                        }
+                    }
+
                     if (rob.Imatricule == 0)
                     {
-                        CreateRobot(4);
+                        if (!RobotSpawn)
+                        {
+                            Robot LastRob = ListRobots[ListRobots.Count - 1].GetComponent<Robot>();
+                            if (LastRob.Imatricule > 4)
+                            {
+                                CreateRobot(LastRob.Imatricule + 1);
+
+                            }
+                            else
+                            {
+                                CreateRobot(4);
+                            }
+                        }
+                        else
+                        {
+                            RobotSpawn = false;
+                        }
                     }
+                    
+                    
 
                     if (rob.Imatricule == -2)
                     {
@@ -244,21 +274,30 @@ public class Factory : MonoBehaviour
             if (choices[1] == 4 && phaseTwo) narrationManager.Load8();
         }
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < ListRobots.Count; i++)
         {
             if (i < ListRobots.Count)
             {
                 Robot rob = ListRobots[i].GetComponent<Robot>();
                 if (rob.Imatricule == imatricule)
                 {
+                    
+                    Robot LastRob = ListRobots[ListRobots.Count-1].GetComponent<Robot>();
+                    if(LastRob.Imatricule < 4)
+                        CreateRobot(4);
+                    else
+                    {
+                        CreateRobot(1 + LastRob.Imatricule);
+                    }
                     ListRobots.Remove(rob.gameObject);
                     Destroy(rob.gameObject);
+                    
+
+                    RobotSpawn = true;
+                    i--;
                 }
             }
         }
-        
-        Debug.Log("Good:" + choices[0].ToString());
-        Debug.Log("Bad:" + choices[1].ToString());
             
     }
 }
