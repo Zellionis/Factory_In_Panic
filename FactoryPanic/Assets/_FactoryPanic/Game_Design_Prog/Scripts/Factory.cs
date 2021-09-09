@@ -137,18 +137,27 @@ public class Factory : MonoBehaviour
                         TimeLerp = 1.0f;
 
                     if (rob.Imatricule == 0)
+                    {
+                        
                         MovingAndDraging(Quart1Carpet, StartCarpet, i);
+                    }
                     else if (rob.Imatricule == 1)
                     {
-                        rob.StartText();
+                        rob.StopText();
                         MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
                     }
                     else if (rob.Imatricule == 2)
+                    {
+                        rob.StartText();
                         MovingAndDraging(EndCarpet, Quart2Carpet, i);
+                    }
                     else if (rob.Imatricule == 3)
+                    {
+                        
                         MovingAndDraging(Spawn, EndCarpet, i);
-                    else if(rob.Imatricule == -1)
-                        MovingAndDraging(StartCarpet,ExitCarpet, i);
+                    }
+                    else if (rob.Imatricule == -1)
+                        MovingAndDraging(StartCarpet, ExitCarpet, i);
 
 
                     if (TimeLerp == 1.0f)

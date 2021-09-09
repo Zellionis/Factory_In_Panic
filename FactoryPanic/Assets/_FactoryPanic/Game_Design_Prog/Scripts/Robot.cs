@@ -39,6 +39,7 @@ public class Robot : MonoBehaviour
 
     public void StopText()
     {
+        Debug.Log("StopText");
         robotBox.SetActive(false);
         if (currentCoroutine!=null)StopCoroutine(currentCoroutine);
         currentCoroutine = default;
