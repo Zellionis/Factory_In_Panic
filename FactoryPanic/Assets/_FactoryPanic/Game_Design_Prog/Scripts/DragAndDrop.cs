@@ -46,6 +46,7 @@ public class DragAndDrop : MonoBehaviour
             Cursor.SetCursor(cursor3, Vector2.zero, CursorMode.ForceSoftware);
             isDragging = true;
             TempPos = transform.position;
+            gameObject.GetComponent<Robot>().StopText();
         }
     }
 

@@ -30,7 +30,11 @@ MonoBehaviour:
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0
-  - text: "Voici les m\xE9tiers : Artiste, Sportif, Cuisinier et Banquier "
+  - text: 'Tu auras le choix entre : Artiste, Sportif, Cuisinier et Banquier.'
+    speed: 0.03
+    sprite: {fileID: 0}
+    lastLine: 0
+  - text: "Pour commencer essaye d\u2019aider 6 robots."
     speed: 0.03
     sprite: {fileID: 0}
     lastLine: 0

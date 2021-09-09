@@ -771,6 +771,18 @@ MonoBehaviour:
   lockX: 0
   lockY: 0
   soundEffect: {fileID: 198634727}
+--- !u!114 &1939263125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767114930549435400, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1565562727799424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769bec61ff5c8094fa2656c87dafccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1940311359 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2352498352512091517, guid: fd9ceb3f8cb79484887eb04ad7f313a5,
@@ -1079,6 +1091,26 @@ PrefabInstance:
       propertyPath: animatorPause
       value: 
       objectReference: {fileID: 1948547835}
+    - target: {fileID: 1864486536571736298, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864486536571736298, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864486536571736298, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864486536571736298, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1969053186746602731, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1478,6 +1510,10 @@ PrefabInstance:
       propertyPath: conveyorAnimator
       value: 
       objectReference: {fileID: 1940311359}
+    - target: {fileID: 326378569, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1939263125}
     - target: {fileID: 7308158491170131657, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
         type: 3}
       propertyPath: m_Name

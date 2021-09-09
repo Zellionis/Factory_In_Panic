@@ -122,11 +122,14 @@ public class Factory : MonoBehaviour
 
                     if (TimeLerp > 1.0)
                         TimeLerp = 1.0f;
-                    
+
                     if (rob.Imatricule == 0)
-                        MovingAndDraging(Quart1Carpet,StartCarpet, i);
+                        MovingAndDraging(Quart1Carpet, StartCarpet, i);
                     else if (rob.Imatricule == 1)
+                    {
+                        rob.StopText();
                         MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
+                    }
                     else if (rob.Imatricule == 2)
                         MovingAndDraging(EndCarpet, Quart2Carpet, i);
                     else if (rob.Imatricule == 3)
