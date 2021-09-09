@@ -1237,6 +1237,12 @@ PrefabInstance:
       objectReference: {fileID: 331695948}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc3e6010b44cf342ad7aa6d686bd68d, type: 3}
+--- !u!95 &1565562727799425 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5853059218956759596, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1565562727799424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1935347241959567692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,6 +1597,11 @@ PrefabInstance:
       propertyPath: listDialogueObject.Array.data[1]
       value: 
       objectReference: {fileID: 1300306271}
+    - target: {fileID: 7308158491170131662, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
+        type: 3}
+      propertyPath: face
+      value: 
+      objectReference: {fileID: 1565562727799425}
     - target: {fileID: 7308158491170131663, guid: e5fd55e0c1e8d5a47b2a42038dfd4e7a,
         type: 3}
       propertyPath: m_LocalPosition.x

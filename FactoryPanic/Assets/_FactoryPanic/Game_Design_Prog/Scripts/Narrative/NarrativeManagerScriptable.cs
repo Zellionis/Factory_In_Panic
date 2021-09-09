@@ -110,7 +110,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
     public struct DialogueData{
          public string text;
         [Range(0F,0.5F)]public float speed;
-         public Animator sprite;
+         public Face expression;
         public bool lastLine;
 
         }
