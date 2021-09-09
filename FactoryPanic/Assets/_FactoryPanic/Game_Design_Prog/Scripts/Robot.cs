@@ -3,6 +3,7 @@ using Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Robot : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class Robot : MonoBehaviour
     public bool sortable = false;
     private float TimeLerp = 0;
     [SerializeField] private NarrativeRobotBank bank;
-    [SerializeField] private TextMesh robotText = default;
+    [SerializeField] private TextMeshPro robotText = default;
+    [SerializeField] private GameObject robotBox = default;
     private ClassRobot body = default;
     private ClassRobot personality = new ClassRobot();
     private DialogueData dialogue = default;
     private Coroutine currentCoroutine = default;
+    private bool lockCoroutine = false;
 
     public void SetClassRobot(ClassRobot newBody, ClassRobot newPersonality)
     {
@@ -26,14 +29,18 @@ public class Robot : MonoBehaviour
 
     public void StartText()
     {
-        robotText.gameObject.SetActive(true);
-        currentCoroutine = StartCoroutine(SlowText());
+        if (!lockCoroutine)
+        {
+            robotBox.SetActive(true);
+            currentCoroutine = StartCoroutine(SlowText());
+            lockCoroutine = true;
+        }
     }
 
     public void StopText()
     {
-        robotText.gameObject.SetActive(false);
-        if(currentCoroutine!=null)StopCoroutine(currentCoroutine);
+        robotBox.SetActive(false);
+        if (currentCoroutine!=null)StopCoroutine(currentCoroutine);
         currentCoroutine = default;
     }
 
