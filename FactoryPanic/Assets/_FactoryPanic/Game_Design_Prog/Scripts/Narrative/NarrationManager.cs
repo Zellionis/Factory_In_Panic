@@ -20,6 +20,8 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] private Animator face = default;
         [SerializeField] private HUD blackscreen = default;
         [SerializeField] private Factory factory = default;
+        [SerializeField] private List<GameObject> effect= default;
+        [SerializeField] private List<Animator> rouage= default;
 
         private bool IsDisplaying = false;
         private Coroutine currentCoroutine = default;
@@ -182,6 +184,14 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             Open();
             StartText(managerBox.LoadBlock(2));
             ScreenShake.Instance.TriggerScreenShake();
+            for (int i = 0; i < effect.Count; i++)
+            {
+                effect[i].SetActive(true);
+            }
+            for (int i = 0; i < rouage.Count; i++)
+            {
+                rouage[i].speed *= 1.2F;
+            }
         }
         public void Load4()
         {
