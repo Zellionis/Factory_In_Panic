@@ -67,13 +67,15 @@ public class Factory : MonoBehaviour
     
     void Start()
     {
-        for(int i = 0; i <4; i++)
+        for(int i = 0; i <5; i++)
             CreateRobot(i);
 
         ListRobots[0].transform.position = Quart1Carpet.position;
         ListRobots[1].transform.position = Quart2Carpet.position;
         ListRobots[2].transform.position = EndCarpet.position;
         ListRobots[3].transform.position = Spawn.position;
+        ListRobots[4].transform.position = Spawn.position;
+        
         SpeedChangement.Instance.Stop();
     }
 
@@ -156,6 +158,7 @@ public class Factory : MonoBehaviour
                 }
             }
         }
+
     }
 
     void MovingAndDraging(Transform start, Transform end, int index)
@@ -196,45 +199,7 @@ public class Factory : MonoBehaviour
                         rob.Imatricule -= 1;
                     }
 
-                    if (i+1 < ListRobots.Count)
-                    {
-                        Robot NextRob = ListRobots[i + 1].GetComponent<Robot>();
-
-
-                        if (rob.Imatricule - NextRob.Imatricule != 1)
-                        {
-                                RobotSpawn = false;
-                                
-                        }
-                        
-                    }
-
-                    if (rob.Imatricule == 0)
-                    {
-                        if (!RobotSpawn)
-                        {
-                            Robot LastRob = ListRobots[ListRobots.Count - 1].GetComponent<Robot>();
-                            if (LastRob.Imatricule > 4)
-                            {
-                                CreateRobot(LastRob.Imatricule + 1);
-                                Debug.Log("pause < 4");
-                            }
-                            else
-                            {
-                                CreateRobot(4);
-                                Debug.Log("pause = 4");
-
-                            }
-                        }
-                        else
-                        {
-                            RobotSpawn = false;
-                        }
-                    }
-                    
-                    
-
-                    if (rob.Imatricule == -2)
+                   if (rob.Imatricule == -2)
                     {
                         ListRobots.Remove(rob.gameObject);
                         Destroy(rob.gameObject);
@@ -242,9 +207,9 @@ public class Factory : MonoBehaviour
                     }
                     
                 }
-            } 
-                
-                
+            }
+            CreateRobot(4);
+
         }
         TimeLerp = 0;
     }
@@ -297,23 +262,8 @@ public class Factory : MonoBehaviour
                 if (rob.Imatricule == imatricule)
                 {
                     
-                    Robot LastRob = ListRobots[ListRobots.Count-1].GetComponent<Robot>();
-                    if (LastRob.Imatricule < 4)
-                    {
-                        CreateRobot(4);       
-                        Debug.Log("sorter < 4");
-
-                    }
-                    else
-                    {
-                        CreateRobot(1 + LastRob.Imatricule);
-                        Debug.Log("sorter = 4");
-
-                    }
                     ListRobots.Remove(rob.gameObject);
                     Destroy(rob.gameObject);
-                    
-
                     RobotSpawn = true;
                     i--;
                 }
