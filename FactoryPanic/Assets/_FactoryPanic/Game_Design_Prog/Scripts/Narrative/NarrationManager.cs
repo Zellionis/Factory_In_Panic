@@ -190,7 +190,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
             }
             for (int i = 0; i < rouage.Count; i++)
             {
-                rouage[i].speed *= 1.2F;
+                rouage[i].speed *= 8F;
             }
         }
         public void Load4()
