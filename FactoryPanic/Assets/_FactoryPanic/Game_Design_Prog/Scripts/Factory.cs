@@ -198,6 +198,17 @@ public class Factory : MonoBehaviour
         }
     }
 
+    private void CleanRobot()
+    {
+        GameObject robot = default; 
+        for (int i = ListRobots.Count-1; i >=0; i--)
+        {
+            robot = ListRobots[i]; 
+            ListRobots.RemoveAt(i);
+            Destroy(robot);
+        }
+    }
+
     public void UpdateHUD()
     {
         ui.setCounter(choices[0], nRobotToCompletePhase2);
@@ -250,6 +261,7 @@ public class Factory : MonoBehaviour
                     choices[1] = 0;
                     narrationManager.Load2();
                     phaseTwo = true;
+                    CleanRobot();
                 }
             }
             else
@@ -264,6 +276,7 @@ public class Factory : MonoBehaviour
                 }
                 if (choices[0] == nRobotToCompletePhase2)
                 {
+                    CleanRobot();
                     narrationManager.Load6();
                 }
             }
