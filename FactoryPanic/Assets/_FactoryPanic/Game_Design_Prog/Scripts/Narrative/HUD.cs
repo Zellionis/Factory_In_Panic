@@ -17,11 +17,18 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         [SerializeField] private TextMeshProUGUI counter = default;
         static public bool stopped = false;
 
+        [SerializeField] private bool stoppedUI = default;
         public void Pause()
         {
+            Debug.Log("Pause");
             pauseScreen.SetActive(true);
             stopped = true;
             animatorPause.SetBool("Open", true);
+        }
+
+        private void Update()
+        {
+            stoppedUI = stopped;
         }
 
         public void Show()
