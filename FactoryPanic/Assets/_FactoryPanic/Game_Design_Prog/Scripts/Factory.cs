@@ -63,6 +63,8 @@ public class Factory : MonoBehaviour
     private bool phaseTwo = false;
 
     private bool RobotSpawn = false;
+
+    private int countPhaseTwo = 0;
     
     void Start()
     {
@@ -218,8 +220,20 @@ public class Factory : MonoBehaviour
     {
         SpeedChangement.Instance.Stop();
         CurrentTimeStop += Time.deltaTime;
+
+
         if (timeStopCarpet <= CurrentTimeStop)
         {
+            if (timeStopCarpet == 0.1f && countPhaseTwo > 1)
+            {
+                timeStopCarpet = 3.0f;
+            }
+            else if(phaseTwo && timeStopCarpet == 0.1f && countPhaseTwo <= 1)
+            {
+                countPhaseTwo++;
+                Debug.Log(countPhaseTwo);
+            }
+            
             CurrentTimeStop = 0;
             StopCarpet = false;
             for (int i = 0; i < ListRobots.Count; i++)
@@ -262,6 +276,7 @@ public class Factory : MonoBehaviour
                     narrationManager.Load2();
                     phaseTwo = true;
                     CleanRobot();
+                    timeStopCarpet = 0.1f;
                 }
             }
             else
