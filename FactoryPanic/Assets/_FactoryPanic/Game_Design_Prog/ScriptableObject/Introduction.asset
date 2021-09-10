@@ -30,7 +30,8 @@ MonoBehaviour:
     speed: 0.03
     expression: 2
     lastLine: 0
-  - text: 'Tu auras le choix entre : Artiste, Sportif, Cuisinier et Banquier.'
+  - text: 'Tu auras le choix parmit les aspirateur du dessus entre : Artiste, Sportif,
+      Cuisinier et Banquier.'
     speed: 0.03
     expression: 2
     lastLine: 0

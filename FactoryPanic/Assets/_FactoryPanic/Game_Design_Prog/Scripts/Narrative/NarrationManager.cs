@@ -27,7 +27,7 @@ namespace Com.IsartDigital.FactoryPanic.GameDesignProg.Narrative {
         private Coroutine currentCoroutine = default;
         private DialogueData currentLine = default;
 
-        private bool textShowed = true;
+        [SerializeField] private bool textShowed = true;
         public static bool textShowedStatic = true;
 
         private int previousInt = 5;
