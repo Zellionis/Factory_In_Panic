@@ -15,11 +15,20 @@ public class Robot : MonoBehaviour
     [SerializeField] private TextMeshPro robotText = default;
     [SerializeField] private GameObject robotBox = default;
     [SerializeField] private GameObject bgBox = default;
+    [SerializeField] private TextMeshPro robotText2 = default;
+    [SerializeField] private GameObject robotBox2 = default;
+    [SerializeField] private GameObject bgBox2 = default;
     private ClassRobot body = default;
     private ClassRobot personality = new ClassRobot();
     private DialogueData dialogue = default;
     private Coroutine currentCoroutine = default;
     private bool lockCoroutine = false;
+
+    private TextMeshPro currentText = default;
+    private GameObject currentBox = default;
+    private GameObject currentBgBox = default;
+
+    private static bool down = true;
 
     public void SetClassRobot(ClassRobot newBody, ClassRobot newPersonality)
     {
@@ -32,27 +41,44 @@ public class Robot : MonoBehaviour
     {
         if (!lockCoroutine)
         {
-            robotBox.SetActive(true);
-            bgBox.SetActive(box);
+            currentBox.SetActive(true);
+            currentBgBox.SetActive(box);
             currentCoroutine = StartCoroutine(SlowText());
             lockCoroutine = true;
         }
     }
 
+    public void SetBox()
+    {
+        if (down)
+        {
+            currentBgBox = bgBox;
+            currentBox = robotBox;
+            currentText = robotText;
+        }
+        else
+        {
+            currentBgBox = bgBox2;
+            currentBox = robotBox2;
+            currentText = robotText2;
+        }
+        down = !down;
+    }
+
     public void StopText()
     {
         Debug.Log("StopText");
-        robotBox.SetActive(false);
+        currentBox.SetActive(false);
         if (currentCoroutine!=null)StopCoroutine(currentCoroutine);
         currentCoroutine = default;
     }
 
     private IEnumerator SlowText()
     {
-        robotText.text = "";
+        currentText.text = "";
         foreach (char letter in dialogue.text.ToCharArray())
         {
-            robotText.text += letter;
+            currentText.text += letter;
             yield return new WaitForSeconds(dialogue.speed);
         }
     }

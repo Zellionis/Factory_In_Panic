@@ -119,6 +119,7 @@ public class Factory : MonoBehaviour
             SelectType(randPerso, ref personality);
             body = personality;
         }
+        rob.SetBox();
         
 
         rob.SetClassRobot(body, personality);
@@ -149,12 +150,12 @@ public class Factory : MonoBehaviour
 
                     if (rob.Imatricule == 0)
                     {
-                        
+
                         MovingAndDraging(Quart1Carpet, StartCarpet, i);
                     }
                     else if (rob.Imatricule == 1)
                     {
-                        rob.StopText();
+
                         MovingAndDraging(Quart2Carpet, Quart1Carpet, i);
                     }
                     else if (rob.Imatricule == 2)
@@ -164,11 +165,14 @@ public class Factory : MonoBehaviour
                     }
                     else if (rob.Imatricule == 3)
                     {
-                        
+
                         MovingAndDraging(Spawn, EndCarpet, i);
                     }
                     else if (rob.Imatricule == -1)
+                    {
+                        rob.StopText();
                         MovingAndDraging(StartCarpet, ExitCarpet, i);
+                    }
 
 
                     if (TimeLerp == 1.0f)
