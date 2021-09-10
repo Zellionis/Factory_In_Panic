@@ -204,6 +204,9 @@ public class Factory : MonoBehaviour
             ListRobots.RemoveAt(i);
             Destroy(robot);
         }
+
+        CurrentTimeStop = timeStopCarpet +1 ;
+        StopCarpet = true;
     }
 
     public void UpdateHUD()
