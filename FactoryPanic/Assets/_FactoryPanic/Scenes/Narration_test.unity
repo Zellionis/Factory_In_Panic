@@ -1913,7 +1913,7 @@ PrefabInstance:
     - target: {fileID: 3838242724962543218, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 61.999985
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 5653870713158088122, guid: 0bc3e6010b44cf342ad7aa6d686bd68d,
         type: 3}
@@ -1989,6 +1989,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.125
       objectReference: {fileID: 0}
+    - target: {fileID: 1875499115, guid: be8a08c70b14c484ba0d1b6bf333515b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 684a1ef706421964ba5a2fa5bd36969a, type: 3}
     - target: {fileID: 1020672477463104791, guid: be8a08c70b14c484ba0d1b6bf333515b,
         type: 3}
       propertyPath: m_Volume
