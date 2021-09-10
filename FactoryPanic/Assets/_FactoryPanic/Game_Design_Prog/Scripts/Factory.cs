@@ -124,7 +124,6 @@ public class Factory : MonoBehaviour
 
         rob.SetClassRobot(body, personality);
         rob.Imatricule = num;
-        //Rg.TypeRobot(go,rob.GetPersonality());
         Rg.RandomRobot(go,rob.GetPersonality(), rob.GetBody());
         ListRobots.Add(go);
         
@@ -133,8 +132,7 @@ public class Factory : MonoBehaviour
     void MoveCarpet()
     {
         SpeedChangement.Instance.Play();
-        if (ListRobots.Count > 0)
-        {
+
             for (int i = 0; i < ListRobots.Count; i++)
             {
                 if (i >= ListRobots.Count)
@@ -178,7 +176,7 @@ public class Factory : MonoBehaviour
                     if (TimeLerp == 1.0f)
                         StopCarpet = true;
                 }
-            }
+            
         }
 
     }

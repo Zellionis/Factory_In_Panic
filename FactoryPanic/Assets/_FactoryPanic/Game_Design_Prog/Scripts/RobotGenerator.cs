@@ -25,8 +25,8 @@ public class RobotGenerator : MonoBehaviour
     {
         Sprite[] spritesPerso = new Sprite[6];
         Sprite[] spritesBody = new Sprite[6];
-        SelectType(personality, ref spritesPerso);
-        SelectType(body, ref spritesBody);
+        spritesPerso =  SelectType(personality);
+        spritesBody =  SelectType(body);    
 
         int randPart = UnityEngine.Random.Range(0, 3);
         int randModify = UnityEngine.Random.Range(1, 3);
@@ -77,21 +77,11 @@ public class RobotGenerator : MonoBehaviour
         
         
         Transform rig =  rob.transform.Find("Squelette");
-        ApplyTransform(rig, ref spritesPerso);
+        ApplyTransform(rig, spritesPerso);
         
     }
 
-    public void TypeRobot(GameObject rob, ClassRobot personality)
-    {
-
-        Sprite[] sprites = new Sprite[6];
-        SelectType(personality, ref sprites);
-        Transform rig =  rob.transform.Find("Squelette");
-        ApplyTransform(rig, ref sprites);
-        
-    }
-
-    void ApplyTransform(Transform rig, ref Sprite[] sprites)
+    void ApplyTransform(Transform rig, Sprite[] sprites)
     {
         if (rig)
         {
@@ -153,8 +143,10 @@ public class RobotGenerator : MonoBehaviour
         }
     }
 
-    void SelectType(ClassRobot cR, ref Sprite[] sprites)
+    Sprite[] SelectType(ClassRobot cR)
     {
+        Sprite[] sprites = new Sprite[6];
+
         int rand = UnityEngine.Random.Range(0, 3);
 
         if (cR == ClassRobot.Artiste)
@@ -196,6 +188,9 @@ public class RobotGenerator : MonoBehaviour
             else if (rand == 2)
                 sprites = Sportif3;
         }
+
+        return sprites;
     }
+    
     
 }
