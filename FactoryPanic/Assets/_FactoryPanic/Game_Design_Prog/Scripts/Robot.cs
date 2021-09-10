@@ -15,8 +15,8 @@ public class Robot : MonoBehaviour
     [SerializeField] private TextMeshPro robotText = default;
     [SerializeField] private GameObject robotBox = default;
     [SerializeField] private GameObject bgBox = default;
-    private ClassRobot body = default;
-    private ClassRobot personality = new ClassRobot();
+    [SerializeField] private ClassRobot body = default;
+    [SerializeField] private ClassRobot personality = new ClassRobot();
     private DialogueData dialogue = default;
     private Coroutine currentCoroutine = default;
     private bool lockCoroutine = false;
