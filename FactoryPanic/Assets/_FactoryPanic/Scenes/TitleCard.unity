@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 801282642832035090, guid: 34830831b5e79fc44a9a7b6391b7e8ed,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1381722970609334024, guid: 34830831b5e79fc44a9a7b6391b7e8ed,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -325,6 +330,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34830831b5e79fc44a9a7b6391b7e8ed, type: 3}
+--- !u!1 &377475662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4059075563321373374, guid: 34830831b5e79fc44a9a7b6391b7e8ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 303612230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &377475665
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377475662}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &616262856
 PrefabInstance:
   m_ObjectHideFlags: 0
