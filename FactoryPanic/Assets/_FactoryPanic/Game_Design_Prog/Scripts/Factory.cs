@@ -108,9 +108,18 @@ public class Factory : MonoBehaviour
         
         ClassRobot personality = default;
         ClassRobot body = default;
+
+        if (phaseTwo)
+        {
+            SelectType(randPerso, ref personality);
+            SelectType(randBody, ref body);
+        }
+        else
+        {
+            SelectType(randPerso, ref personality);
+            body = personality;
+        }
         
-        SelectType(randPerso, ref personality);
-        SelectType(randBody, ref body);
 
         rob.SetClassRobot(body, personality);
         rob.Imatricule = num;
@@ -150,7 +159,7 @@ public class Factory : MonoBehaviour
                     }
                     else if (rob.Imatricule == 2)
                     {
-                        rob.StartText();
+                        rob.StartText(phaseTwo);
                         MovingAndDraging(EndCarpet, Quart2Carpet, i);
                     }
                     else if (rob.Imatricule == 3)

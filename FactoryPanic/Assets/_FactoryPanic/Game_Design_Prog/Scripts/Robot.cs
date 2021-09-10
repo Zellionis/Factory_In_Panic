@@ -14,6 +14,7 @@ public class Robot : MonoBehaviour
     [SerializeField] private NarrativeRobotBank bank;
     [SerializeField] private TextMeshPro robotText = default;
     [SerializeField] private GameObject robotBox = default;
+    [SerializeField] private GameObject bgBox = default;
     private ClassRobot body = default;
     private ClassRobot personality = new ClassRobot();
     private DialogueData dialogue = default;
@@ -27,11 +28,12 @@ public class Robot : MonoBehaviour
         dialogue = bank.GetRandomLine(newBody, newPersonality);
     }
 
-    public void StartText()
+    public void StartText(bool box)
     {
         if (!lockCoroutine)
         {
             robotBox.SetActive(true);
+            bgBox.SetActive(box);
             currentCoroutine = StartCoroutine(SlowText());
             lockCoroutine = true;
         }
